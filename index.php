@@ -3,42 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
-</head>
-<body>
-    
-    <!-- nav bar -->
-    <header>
-
-    </header>
-
-    <section>
-        <div class="list">
-            <div class="card">
-
-            </div>
-            <div class="card">
-                
-                </div>  
-        </div>
-        <div class="filter"></div>
-    </section>
-</body>
-=======
-<html lang="en">
-
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope&family=Montserrat:ital,wght@0,200;0,700;0,900;1,100;1,200&family=Raleway:ital,wght@0,100;0,300;0,400;0,600;1,100&family=Roboto&family=Tangerine:wght@700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
     <title>Vans Home</title>
 </head>
+
+<body>
+    
+
+</body>
+
 
 <body>
     <header>
@@ -65,6 +43,39 @@
         </nav>
     </header>
 
+    <section>
+        <div class="list">
+<!--             <div class="mod" >
+                <div class="modalHeader">
+
+                </div>
+                <div class="modalBody">
+            
+                </div>
+            </div> -->
+            <div class="card" onclick="myFunction()">
+
+            </div>
+            <div class="card">
+                
+                </div>  
+        </div>
+        <div class="filter"></div>
+    </section>
+
 </body>
 
+    <script>
+        function myFunction() {
+            var x;
+            var r = confirm("Press OK or Cancel button");
+            if (r == true) {
+            x = "You pressed OK!";
+        }
+            else {
+            x = "You pressed Cancel!";
+        }
+        document.getElementById("demo").innerHTML = x;
+    }
+    </script>
 </html>

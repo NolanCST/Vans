@@ -16,7 +16,7 @@ section{
     display: flex;
     flex-direction: row;
 }
-
+/* nav bar */
 header {
     position: fixed;
     height: 10%;
@@ -25,10 +25,18 @@ header {
     top: 0;
     z-index: 3;
 }
+.navbar{
+    height: 100%;
+}
+.p_bgGreen {
+    background-color: #18534f;
+}
+
+/* list card */
 .list{
     width: 82%;
     height: 100%;
-    background-color: grey;
+    background-color: #D6955B;
     display: flex; 
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -38,17 +46,15 @@ header {
 .card{
     height: 30%;
     width: 40%;
-    background-color: green;
+    background-color: #ECF8F6;
 }
 
-
+/* filter */
 .filter{
     position: fixed;
     height: 100vh;
     width: 18%;
-    background-color: aqua;
+    background-color: #FEEAA1;
     right: 0;
 }
-.p_bgGreen {
-    background-color: #18534f;
-}
+
