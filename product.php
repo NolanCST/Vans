@@ -10,10 +10,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $_POST["starting_price"], 
         $_POST["last_price"], 
         $_POST["end_date"], 
-         $_POST["model"] 
-         $_POST["mark"] 
-         $_POST["power"] 
-         $_POST["year"] 
+         $_POST["model"] ,
+         $_POST["mark"] ,
+         $_POST["power"] ,
+         $_POST["year"] ,
          $_POST["description"] 
         );
       $myProduct -> sauvegarde();
