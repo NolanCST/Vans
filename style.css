@@ -1,11 +1,30 @@
 
+/* -------> Main <-----*/
+body {
+    /* font-family: 'Montserrat', sans-serif !important; */
+    background-color: #D6955B !important; 
+    width: 100vw;
+    height: 100vh;
+}
+
+h1 {
+    color: goldenrod;
+}
+
+/* -------> Navbar <-----*/
+.p_bgGreen {
+    background-color: #09433B;
+}
+
+.p_ftLogo {
+    font-family: 'Ms Madi', cursive !important;
+    font-size: 30px !important;
+}
+
+
 *{
     margin: 0;
     padding: 0;
-}
-body{
-    width: 100vw;
-    height: 200vh;
 }
 
 section{
