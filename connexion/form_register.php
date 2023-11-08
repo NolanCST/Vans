@@ -1,4 +1,4 @@
-<form class="box" action="register.php" method="post">
+<form class="box" action="register.php" method="post" name="register">
     <h1 class="box-title">S'inscrire</h1>
     <input type="text" class="box-input" name="lastname" placeholder="Nom" required />
     <input type="text" class="box-input" name="firstname" placeholder="Prenom" required />
