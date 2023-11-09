@@ -13,7 +13,7 @@
 
     <body>
         <header>
-            <?php require __DIR__."/layouts/navigation.php"; ?>
+            <?php require_once __DIR__."/layouts/navigation.php"; ?>
             
         </header>
       
@@ -28,11 +28,11 @@
             </div>
           <div class="filter"></div>
         </section>
-      
-        <main>
-           
 
-        </main>
+        <footer>
+            <?php require __DIR__."/layouts/footer.php"; ?>
+        </footer>
+
     </body>
 
 
@@ -49,4 +49,5 @@
         document.getElementById("demo").innerHTML = x;
     }
     </script>
+
 </html>
