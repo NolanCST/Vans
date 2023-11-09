@@ -2,16 +2,30 @@
 
 class Register {
 
-    public string $lastname;
-    public string $firstname;
-    public string $email;
-    public string $password;
+    private string $lastname;
+    private string $firstname;
+    private string $email;
+    private string $password;
 
     public function __construct ($lastname, $firstname, $email, $password) {
         $this->lastname = $lastname;
         $this->firstname = $firstname;
         $this->email = $email;
         $this->password = $password;
+    }
+
+    public function __get ($property) {
+        if ($property === "lastname") {
+            return $this->lastname;
+        } else if ($property === "firstname") {
+            return $this->firstname;
+        } else if ($property === "email") {
+            return $this->email;
+        } else if ($property === "password") {
+            return $this->password;
+        } else {
+            return $this->$property;
+        }
     }
 
     public function save () {
