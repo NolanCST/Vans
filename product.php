@@ -1,4 +1,4 @@
-<!-- <html lang="fr">
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +15,7 @@
     require __DIR__ . "/layouts/navigation.php";
 ?>
     </header>
-    <section> -->
+    <section>
     <?php
     require __DIR__ . "/views/form_product.php";
     require __DIR__ . "/classes/products.class.php";

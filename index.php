@@ -13,7 +13,7 @@
 
     <body>
         <header>
-            <?php require_once __DIR__."/layouts/navigation.php"; ?>
+            <?php include __DIR__ . "/layouts/navigation.php"; ?>
             
         </header>
       
