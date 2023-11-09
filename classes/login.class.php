@@ -2,12 +2,22 @@
 
 class Login {
 
-    public string $email;
-    public string $password;
+    private string $email;
+    private string $password;
 
     public function __construt ($email, $password) {
         $this->email = $email;
         $this->password = $password;
+    }
+
+    public function __get ($property) {
+        if ($property === "email") {
+            return $this->email;
+        } else if ($property === "password") {
+            return $this->password;
+        } else {
+            return $this->$property;
+        }
     }
 
     public function verification () {
