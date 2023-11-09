@@ -27,7 +27,7 @@ class  Product {
     }
 
    public function save () {
-    $dbh = new PDO("mysql:dbname=vans;host=127.0.0.1", "root", "");
+    require __DIR__."/../baseDeDonnee.php";
     $query=$dbh->prepare("INSERT INTO `product` (title,mark,model,power,year,description,starting_price, end_date) VALUES (:title,  :mark,:model, :power, :year, :description,:starting_price, :end_date)");
     $query->bindValue(':title', $this->title, PDO::PARAM_STR);
     $query->bindValue(':mark', $this->mark, PDO::PARAM_STR);
