@@ -15,6 +15,12 @@
                 <li class="nav-item">
                     <a class="nav-link" href="register.php">Inscription</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.php">Connexion</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="profil.php">Profile</a>
+                </li>
             </ul>
             <form class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
