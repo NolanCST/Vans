@@ -1,7 +1,12 @@
-/* -------> Main <-----*/
+/* -------> Main <-------*/
+* {
+   margin: 0;
+   padding: 0;
+}
+
 body {
    /* font-family: 'Montserrat', sans-serif !important; */
-   background-color: #d6955b !important;
+   background-color: #9B2F05 !important;
    width: 100vw;
    height: 100vh;
 }
@@ -10,7 +15,18 @@ h1 {
    color: goldenrod;
 }
 
-/* -------> Navbar <-----*/
+/* -------> Navbar <-------*/
+header {
+   position: fixed;
+   height: 10%;
+   width: 100vw;
+   top: 0;
+   z-index: 3;
+}
+.navbar {
+   height: 100%;
+}
+
 .p_bgGreen {
    background-color: #09433b;
 }
@@ -20,40 +36,21 @@ h1 {
    font-size: 30px !important;
 }
 
-* {
-   margin: 0;
-   padding: 0;
-}
-
 section {
    position: relative;
    width: 100%;
-   height: 95%;
-   top: 5%;
+   height: 90%;
+   top: 10%;
    display: flex;
    flex-direction: row;
 }
-/* nav bar */
-header {
-   position: fixed;
-   height: 10%;
-   width: 100vw;
-   background-color: red;
-   top: 0;
-   z-index: 3;
-}
-.navbar {
-   height: 100%;
-}
-.p_bgGreen {
-   background-color: #18534f;
-}
 
-/* list card */
+
+/* -------> list card <------- */
 .list {
    width: 82%;
    height: 100%;
-   background-color: #d6955b;
+   /* background-color: #d6955b; */
    display: flex;
    flex-wrap: wrap;
    justify-content: space-evenly;
@@ -66,11 +63,35 @@ header {
    background-color: #ecf8f6;
 }
 
-/* filter */
+/* -------> filter <------- */
 .filter {
-   position: fixed;
-   height: 100vh;
-   width: 18%;
+   position: sticky;
+   height: 98.5%;
+   width: 25%;
    background-color: #feeaa1;
    right: 0;
 }
+
+
+/* ----> Section Footer <---- */
+.aide {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-evenly;
+   background-color: rgba(0,0,0, 0.5);
+   color: #ecf8f6;
+   margin-top: 4%;
+   padding-top: 2%;
+   align-items: baseline;
+   font-size: 12px;
+ }
+
+ .p_ftLogo1 {
+   font-family: "Ms Madi", cursive !important;
+   font-size: 70px !important;
+ }
+ 
+ /* .Logo-FB, .Logo-You, .Logo-Insta, .Logo-Twit {
+   width: 2vw;
+   margin: 2%;
+ } */
