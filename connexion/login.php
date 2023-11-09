@@ -20,7 +20,12 @@
 
         require __DIR__."/form_login.php";
 
-        // require __DIR__."/../classes/register.class.php";
+        require __DIR__."/../classes/login.class.php";
+
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $logUser = new Login ($_POST["email"], $_POST["password"]);
+            $logUser->verification();
+        }
         ?>
         </main>
     </body>
