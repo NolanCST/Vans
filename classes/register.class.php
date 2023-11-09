@@ -36,11 +36,11 @@ class Register {
         $query->bindValue(':email', $this->email, PDO::PARAM_STR);
         $query->bindValue(':password', $this->password, PDO::PARAM_STR);
         $results = $query->execute();
-        if($results){
-            echo "<div class='sucess'>
-                    <h3>Vous êtes inscrit avec succès.</h3>
-                    <p>Cliquez ici pour vous <a href='login.php'>connecter</a></p>
-                    </div>";
-        }
+        if($results){ ?>
+            <div class="alert alert-success" role="alert">
+                Vous êtes inscrit avec succès.
+            </div>
+            <?php header("refresh: 2, url=login.php");
+        };
     }
 }
