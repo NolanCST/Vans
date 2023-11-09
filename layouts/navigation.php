@@ -13,7 +13,10 @@
                     <a class="nav-link" href="#">Historique</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="register.php">Inscription</a>
+                    <a class="nav-link" href="./connexion/register.php">Inscription</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./connexion/login.php">Connexion</a>
                 </li>
             </ul>
             <form class="d-flex" role="search">
