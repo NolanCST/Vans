@@ -21,6 +21,21 @@
                 <li class="nav-item">
                     <a class="nav-link" href="profil.php">Profil</a>
                 </li>
+                <ul class="nav navbar-nav navbar-right">
+                    <?php
+                        //Define each name associated with an URL
+                        $urls = array(
+                            'Home' => '/index.php',
+                            'Enchères' => '/product.php',
+                            //…
+                        );
+
+                        foreach ($urls as $name => $url) {
+                            print '<li '.(($currentPage === $name) ? ' class="active" ': '').
+                                '><a href="'.$url.'">'.$name.'</a></li>';
+                        }
+                    ?>
+                </ul>
             </ul>
             <form class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

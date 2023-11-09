@@ -13,8 +13,8 @@
 
     <body>
         <header>
-            <?php include __DIR__ . "/layouts/navigation.php"; ?>
-            
+          
+            <?php include('./layouts/navigation.php'); ?>
         </header>
       
         <section>
