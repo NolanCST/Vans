@@ -23,7 +23,7 @@
             require __DIR__."/../classes/register.class.php";
 
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                $myUser = new Register ($_POST["lastname"], $_POST["firstname"], $_POST["email"], password_hash($_POST["password"], PASSWORD_BCRYPT));
+                $myUser = new Register ($_POST["lastname"], $_POST["firstname"], $_POST["email"], ($_POST["password"]));
                 $myUser->save();
             } ?>
         </main>

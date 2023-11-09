@@ -26,18 +26,14 @@ class Login {
         $query->execute();
         $results = $query->fetchAll();
         session_start();
-        if (isset($_POST['email']) &&  isset($_POST['password'])) {
+        if (isset($_POST['email']) && isset($_POST['password'])) {
             foreach ($results as $result) {
-                if (
-                    $result['email'] === $_POST['email'] &&
-                    $result['password'] === $_POST['password']
-                ) {
+                if ($result['email'] === $_POST['email'] && $result['password'] === $_POST['password'] ) {
                     $loggedUser = ['email' => $result['email'],];
                     $_SESSION['email'] = $_POST['email'];
-                    header("Location: /bocalAcademy/vans/index.php");
-                    exit();
+                    $_SESSION['id'] = $result['id_user'];
                 } else {
-                    $errorMessage = sprintf('Les informations envoyées ne permettent pas de vous identifier : (%s/%s)', $_POST['email'], $_POST['password']);
+                    $errorMessage = sprintf('Les informations envoyées ne permettent pas de vous identifier');
                 }
             }
         }
@@ -51,7 +47,8 @@ class Login {
             <div class="alert alert-success" role="alert">
             Bonjour <?php echo $loggedUser['email']; ?> et bienvenue sur le site !
             </div>
-        <?php };
+            <?php header("refresh: 2, url=../index.php");
+        };
         }
 }
 ?>

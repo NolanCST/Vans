@@ -1,0 +1,25 @@
+body {
+   width: 100vw;
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+
+.container {
+   width: 45vw;
+   height: 55vh;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-around;
+   padding: 3%;
+   background-color: #feeaa1;
+   border-radius: 20px;
+}
+
+.profilElement {
+   width: 25vw;
+   height: 5vh;
+}
