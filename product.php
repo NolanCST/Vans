@@ -1,7 +1,8 @@
-<!-- <html lang="fr">
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="product.css" />
         <link rel="stylesheet" type="text/css" href="style.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +16,7 @@
     require __DIR__ . "/layouts/navigation.php";
 ?>
     </header>
-    <section> -->
+    <section>
     <?php
     require __DIR__ . "/views/form_product.php";
     require __DIR__ . "/classes/products.class.php";
@@ -35,28 +36,28 @@
     }
 
 
-$dbh = new PDO("mysql:dbname=vans;host=127.0.0.1", "root", "");
+// $dbh = new PDO("mysql:dbname=vans;host=127.0.0.1", "root", "");
 
 
-$query = $dbh->prepare("SELECT * FROM product");
+// $query = $dbh->prepare("SELECT * FROM product");
 
-$query->execute();
+// $query->execute();
 
-$results = $query->fetchAll();
+// $results = $query->fetchAll();
 
 
-foreach ($results as $result) {
-    echo "<h1> Vente N° $result[id_product]: </h1>";
-    echo "<h2> Titre : $result[title]</h2>"; 
-    // echo "<p> Marque : $result[mark]</p>";
-    // echo "<p> Modèle : $result[model]</p>";
-    // echo "<p> Puissance : $result[power]</p>";
-    // echo "<p> Année : $result[year]</p>";
-    // echo "<p> Description : $result[description]</p>";
-    echo "<p> Prix de départ : $result[starting_price]</p>";
-    echo "<p> Date de fin : $result[end_date]</p>";
-    echo "<p> ___________________</p>";
-}
+// foreach ($results as $result) {
+//     echo "<h1> Vente N° $result[id_product]: </h1>";
+//     echo "<h2> Titre : $result[title]</h2>"; 
+//     // echo "<p> Marque : $result[mark]</p>";
+//     // echo "<p> Modèle : $result[model]</p>";
+//     // echo "<p> Puissance : $result[power]</p>";
+//     // echo "<p> Année : $result[year]</p>";
+//     // echo "<p> Description : $result[description]</p>";
+//     echo "<p> Prix de départ : $result[starting_price]</p>";
+//     echo "<p> Date de fin : $result[end_date]</p>";
+//     echo "<p> ___________________</p>";
+// }
 ?>
     </section>
 
