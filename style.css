@@ -1,0 +1,76 @@
+/* -------> Main <-----*/
+body {
+   /* font-family: 'Montserrat', sans-serif !important; */
+   background-color: #d6955b !important;
+   width: 100vw;
+   height: 100vh;
+}
+
+h1 {
+   color: goldenrod;
+}
+
+/* -------> Navbar <-----*/
+.p_bgGreen {
+   background-color: #09433b;
+}
+
+.p_ftLogo {
+   font-family: "Ms Madi", cursive !important;
+   font-size: 30px !important;
+}
+
+* {
+   margin: 0;
+   padding: 0;
+}
+
+section {
+   position: relative;
+   width: 100%;
+   height: 95%;
+   top: 5%;
+   display: flex;
+   flex-direction: row;
+}
+/* nav bar */
+header {
+   position: fixed;
+   height: 10%;
+   width: 100vw;
+   background-color: red;
+   top: 0;
+   z-index: 3;
+}
+.navbar {
+   height: 100%;
+}
+.p_bgGreen {
+   background-color: #18534f;
+}
+
+/* list card */
+.list {
+   width: 82%;
+   height: 100%;
+   background-color: #d6955b;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-evenly;
+   padding: 20px 0;
+   overflow-y: auto;
+}
+.card {
+   height: 30%;
+   width: 40%;
+   background-color: #ecf8f6;
+}
+
+/* filter */
+.filter {
+   position: fixed;
+   height: 100vh;
+   width: 18%;
+   background-color: #feeaa1;
+   right: 0;
+}
