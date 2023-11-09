@@ -27,30 +27,21 @@
          $_POST["mark"] ,
          $_POST["power"] ,
          $_POST["year"] ,
-         $_POST["model"] ,
-         $_POST["mark"] ,
-         $_POST["power"] ,
-         $_POST["year"] ,
          $_POST["description"] 
         );
-      $myProduct -> save();
       $myProduct -> save();
     }
 
 
 // $dbh = new PDO("mysql:dbname=vans;host=127.0.0.1", "root", "");
-// $dbh = new PDO("mysql:dbname=vans;host=127.0.0.1", "root", "");
+
 
 // $query = $dbh->prepare("SELECT * FROM product");
-// $query = $dbh->prepare("SELECT * FROM product");
-
 
 // $query->execute();
-// $query->execute();
-
 
 // $results = $query->fetchAll();
-// $results = $query->fetchAll();
+
 
 // foreach ($results as $result) {
 //     echo "<h1> N° $result[id]: Starting price : $result[starting_price]</h1>";
