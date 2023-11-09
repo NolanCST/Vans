@@ -16,14 +16,10 @@
                     <a class="nav-link" href="./connexion/register.php">Inscription</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./connexion/login.php">Connexion
-                    </a>
+                    <a class="nav-link" href="./connexion/login.php">Connexion</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="login.php">Connexion</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="profil.php">Profile</a>
+                    <a class="nav-link" href="profil.php">Profil</a>
                 </li>
             </ul>
             <form class="d-flex" role="search">
