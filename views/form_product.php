@@ -1,11 +1,18 @@
 <form   action="product.php" method="POST"  >
-    <input name="starting_price" placeholder="Starting Price" type="number"> </input><br/>
-    <input name="end_date" placeholder="end date" type="date"> </input><br/>
-    <input name="model" placeholder="model" type="text"> </input><br/>
-    <input name="mark" placeholder="mark" type="text"> </input><br/>
-    <input name="power" placeholder="power" type="text"> </input><br/>
-    <input name="year" placeholder="year" type="number"> </input><br/>
-    <input name="description" placeholder="description" type="text"> </input><br/>
-    <input type="submit" value= "Good"> </input><br/>
+<label for="tarting_price">Prix de départ:</label><br/>
+    <input name="starting_price" type="number"> </input><br/>
+    <label for="end_date">Date de fin de l'enchère:</label><br/>
+    <input name="end_date" type="datetime-local"> </input><br/>
+    <label for="model">Modèle :</label><br/>
+    <input name="model" type="text"> </input><br/>
+    <label for="mark">Marque:</label><br/>
+    <input name="mark" type="text"> </input><br/>
+    <label for="power">Puissance:</label><br/>
+    <input name="power" type="text"> </input><br/>
+    <label for="year">Année :</label><br/>
+    <input name="year" type="number"> </input><br/>
+    <label for="description">Description:</label><br/>
+    <input name="description" type="text"> </input><br/>
+    <input type="submit" value= "Poster l'annonce"> </input><br/>
 </form>
 
