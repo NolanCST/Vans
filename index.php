@@ -27,11 +27,11 @@
             </div>
           <div class="filter"></div>
         </section>
-      
-        <main>
-           
 
-        </main>
+        <footer>
+            <?php require __DIR__."/layouts/footer.php"; ?>
+        </footer>
+
     </body>
 
 
@@ -62,4 +62,5 @@
 
    /*  } */
     </script>
+
 </html>

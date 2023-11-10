@@ -7,14 +7,35 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="product.php">Enchères</a>
+                    <a class="nav-link" aria-current="page" href="./product.php">Enchères</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Historique</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="register.php">Inscription</a>
+                    <a class="nav-link" href="./connexion/register.php">Inscription</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./connexion/login.php">Connexion</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="profil.php">Profil</a>
+                </li>
+                <ul class="nav navbar-nav navbar-right">
+                    <?php
+                        //Define each name associated with an URL
+                        $urls = array(
+                            'Home' => '/index.php',
+                            'Enchères' => '/product.php',
+                            //…
+                        );
+
+                        foreach ($urls as $name => $url) {
+                            print '<li '.(($currentPage === $name) ? ' class="active" ': '').
+                                '><a href="'.$url.'">'.$name.'</a></li>';
+                        }
+                    ?>
+                </ul>
             </ul>
             <form class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
