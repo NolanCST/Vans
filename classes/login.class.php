@@ -21,7 +21,7 @@ class Login {
     }
 
     public function verification () {
-        $dbh = new PDO("mysql:dbname=vans;host=127.0.0.1", "root", "");
+        require __DIR__."/../dataBase.php";
         $query = $dbh->prepare("SELECT * FROM `user`");
         $query->execute();
         $results = $query->fetchAll();

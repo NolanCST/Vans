@@ -19,7 +19,9 @@ body {
    border-radius: 20px;
 }
 
-.profilElement {
-   width: 25vw;
+.box-button {
+   width: 10vw;
    height: 5vh;
+   border-radius: 10px;
+   border: 1px solid #09433b;
 }

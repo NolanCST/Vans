@@ -29,7 +29,7 @@ class Register {
     }
 
     public function save () {
-        $dbh = new PDO ("mysql:dbname=vans;host=127.0.0.1", "root", "");
+        require __DIR__."/../dataBase.php";
         $query = $dbh->prepare("INSERT INTO `user` (lastname, firstname, email, password) VALUES (:lastname, :firstname, :email, :password)");
         $query->bindValue(':lastname', $this->lastname, PDO::PARAM_STR);
         $query->bindValue(':firstname', $this->firstname, PDO::PARAM_STR);

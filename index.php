@@ -19,34 +19,42 @@
                 ?>
             </header>
 
-            <section>
-                <div class="list">
-                    <div class="card"></div>
-                    <div class="card"></div>
-                </div>
-                <div class="filter"></div>
-            </section>
-
-            <footer>
-                <?php
-                require __DIR__ . "./layouts/footer.php";
-                ?>
-            </footer>
-
+            <main>
+                <section>
+                  <div class="list" >
+                        <?php 
+                            require __DIR__ . "/layouts/truc.php";
+                        ?>
+                    </div>
+                  <div class="filter"></div>
+                </section>
+            </main>
+                  <footer>
+                    <?php
+                    require __DIR__ . "./layouts/footer.php";
+                    ?>
+                  </footer>
         </body>
-
-
         <script>
-            function myFunction() {
-                var x;
-                var r = confirm("Press OK or Cancel button");
-                if (r == true) {
-                    x = "You pressed OK!";
-                } else {
-                    x = "You pressed Cancel!";
-                }
-                document.getElementById("demo").innerHTML = x;
-            }
-        </script>
+            let r = false;
 
-    </html>
+            let doc = document.querySelectorAll(".cardA");
+
+            doc.forEach( box => {
+                box.addEventListener("click", function(e){
+                    console.log("hello", box );
+                    console.log("hello", e.target.parentElement.id );
+
+                    if(r == true || r == null){
+                        box.classList.remove("active");
+                        document.querySelector(".list").classList.remove("active");
+                        r = false;
+                    } else if (r == false ){
+                        box.classList.add("active");
+                        document.querySelector(".list").classList.add("active");
+                        r = true;
+                    }
+                }); 
+            })
+        </script>
+  </html>
