@@ -5,10 +5,21 @@
 }
 
 body {
-   /* font-family: 'Montserrat', sans-serif !important; */
    background-color: #9B2F05 !important;
    width: 100vw;
    height: 100vh;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+
+main{
+   position: relative;
+   width: 100%;
+   height: 90%;
+   top:10%;
+
 }
 
 h1 {
@@ -37,10 +48,8 @@ header {
 }
 
 section {
-   position: relative;
    width: 100%;
-   height: 90%;
-   top: 10%;
+   height: 100%;
    display: flex;
    flex-direction: row;
 }
@@ -57,7 +66,7 @@ section {
    /* padding: 20px 0; */
    overflow-y: auto;
 }
-.list.active {
+.section.active {
     background-color: rgb(36, 36, 36);
 }
 .cardA{
@@ -67,29 +76,91 @@ section {
     background-color: #ecf8f6;
     display: flex;
     flex-direction: column;
+    border-radius: 6%;
+    overflow: hidden;
 }
 .cardA.active{
     position: absolute;
     height: 96%;
-    width: 80%;
+    width: 96%;
     z-index: 4;
+    transform: translate(12%);
 }
 .image{
-    background-color: blue;
+    background-color: red;
     width: 100%;
-    height: 50%;
+    height: 40%;
+}
+.cla-mark{
+    grid-area: mark;
+}
+.cla-model{
+    grid-area: model;
+}
+.cla-year{
+    grid-area: year;
+}
+.cla-power{
+    grid-area: power;
+}
+.cla-last_price{
+    grid-area: last_price;
 }
 
+
+
+.info{
+    display: grid;
+    grid-template-columns: 50%;
+    grid-template-rows: 43% 33% auto;
+    grid-template-areas:
+  "mark       model     " 
+  "year       power     " 
+  "last_price last_price";
+    height: 60%;
+    width: 100%;
+}
+
+.info div{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 18%;
+}
+.info .cla-last_price{
+
+    padding-left: 9%;
+}
+
+.cardA .cla-end_date,
+.cardA .cla-starting_price,
+.cardA .cla-description,
+.cardA .cla-id_product,
+.cardA .cla-0
+{
+    display:none;
+}
+
+.cardA.active .cla-end_date,
+.cardA.active .cla-starting_price,
+.cardA.active .cla-description,
+.cardA.active .cla-id_product{
+    display: flex;
+}
 /* -------> filter <------- */
 .filter {
    position: sticky;
-   height: 98.5%;
+   height: 100%;
    width: 25%;
    background-color: #feeaa1;
    right: 0;
 }
 
 /* ----> Section Footer <---- */
+footer{
+    position: relative;
+    top: 5.1%;
+}
 .aide {
    display: flex;
    flex-direction: row;
