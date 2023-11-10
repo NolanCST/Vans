@@ -9,7 +9,7 @@
         public function connexion(){
             require __DIR__ ."../../database.php";
 
-            $query = $dbh->prepare("SELECT * FROM product");
+            $query = $dbh->prepare("SELECT * FROM ( SELECT * FROM `product` ORDER BY `id_product` DESC LIMIT 10 ) sub ORDER BY `id_product` ASC;");
 
             $query -> execute();
 
@@ -31,8 +31,14 @@
                 foreach($element as $x => $value){
         
                     if ($x == "id_product" ||$x == "starting_price" ||$x == "last_price" ||$x == "end_date" ||$x == "model" ||$x == "mark" ||$x == "power" ||$x == "year" ||$x == "description") {
-                        echo $x . " : ". $value . "</br>" ;
                         
+                        if($x == "last_price" || $x == "starting_price"){
+                            echo "<div class='cla-$x'>"./*  $x . " : ". */ $value . " €</div>" ;
+                        } else if ($x == "power"){
+                            echo "<div class='cla-$x'>". /* $x . " : ". */ $value . " chv</div>" ;
+                        } else {
+                            echo "<div class='cla-$x'>". /* $x . " : ". */ $value . " </div>" ;
+                        }
                     }
                 }
                 echo     
