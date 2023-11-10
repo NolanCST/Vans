@@ -13,18 +13,17 @@
 
     <body>
         <header>
-          
-            <?php include('./layouts/navigation.php'); ?>
+            <?php require __DIR__."/layouts/navigation.php";  ?>
         </header>
       
         <section>
-          <div class="list">
-              <div class="card">
+          <div class="list" >
+                <?php 
+                    require __DIR__ . "/layouts/truc.php";
+                ?>
+                <div class="cardTest">
 
-              </div>
-              <div class="card">
-                
-             </div>  
+                </div>
             </div>
           <div class="filter"></div>
         </section>
@@ -37,17 +36,31 @@
 
 
     <script>
-        function myFunction() {
-            var x;
-            var r = confirm("Press OK or Cancel button");
-            if (r == true) {
-            x = "You pressed OK!";
-        }
-            else {
-            x = "You pressed Cancel!";
-        }
-        document.getElementById("demo").innerHTML = x;
-    }
+        let r = false;
+
+        let doc = document.querySelectorAll(".cardA");
+        
+        doc.forEach( box => {
+            box.addEventListener("click", function(e){
+                console.log("hello", box );
+                console.log("hello", e.target.parentElement.id );
+
+                if(r == true || r == null){
+                    box.classList.remove("active");
+                    document.querySelector(".list").classList.remove("active");
+                    r = false;
+                } else if (r == false ){
+                    box.classList.add("active");
+                    document.querySelector(".list").classList.add("active");
+                    r = true;
+                }
+
+            }); 
+        })
+
+
+
+   /*  } */
     </script>
 
 </html>
