@@ -1,7 +1,7 @@
 <?php
   session_start();
   if(!isset($_SESSION["email"])){
-    header("Location: ../connexion/login.php");
+    header("Location: login.php");
     exit(); 
   }
 ?>
@@ -21,7 +21,7 @@
     </head>
     <body>
         <header>
-            <?php require __DIR__."/../layouts/navigation.php"; ?>
+            <?php require __DIR__."/navigation.php"; ?>
         </header>
         <main>
             <?php

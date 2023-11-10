@@ -1,7 +1,6 @@
-
+<!-- 
 <footer>
     <div class="aide">
-            <!-- Section : colonnes enchères -->
         <div class="article1">
             <p class="p_ftLogo1">Vans</p>
             <div class="MiniLogo">
@@ -33,4 +32,4 @@
         </div>
 
     </div>
-</footer> 
+</footer>  -->
