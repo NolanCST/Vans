@@ -1,9 +1,5 @@
 <?php
 
-
-// A CORRIGER 
-
-
 $dbh = new PDO("mysql:dbname=vans;host=127.0.0.1", "root", "");
 
 $query = $dbh->prepare("SELECT * FROM `product` p LEFT JOIN `details` d ON p.id_product = d.id_product");
