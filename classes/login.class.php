@@ -28,7 +28,7 @@ class Login {
         session_start();
         if (isset($_POST['email']) && isset($_POST['password'])) {
             foreach ($results as $result) {
-                if ($result['email'] === $_POST['email'] && $result['password'] === $_POST['password'] ) {
+                if ($result['email'] === $_POST['email'] && password_verify($_POST['password'], $result['password']) ) {
                     $loggedUser = ['email' => $result['email'],];
                     $_SESSION['email'] = $_POST['email'];
                     $_SESSION['id'] = $result['id_user'];
