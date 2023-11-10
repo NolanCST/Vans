@@ -27,7 +27,7 @@ class  Product {
     }
 
    public function save () {
-    require __DIR__."/../baseDeDonnee.php";
+    require __DIR__."/../dataBase.php";
     $query=$dbh->prepare("INSERT INTO `product` (title,mark,model,power,year,description,starting_price, end_date) VALUES (:title,  :mark,:model, :power, :year, :description,:starting_price, :end_date)");
     $query->bindValue(':title', $this->title, PDO::PARAM_STR);
     $query->bindValue(':mark', $this->mark, PDO::PARAM_STR);

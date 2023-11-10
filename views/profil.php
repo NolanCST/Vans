@@ -36,6 +36,7 @@
                     <p class="profilElement">Nom: <?php echo $result['lastname'] ?></p>
                     <p class="profilElement">Prenom: <?php echo $result['firstname'] ?></p>
                     <p class="profilElement">Email: <?php echo $result['email'] ?></p>
+                    <input type="submit" name="submit" value="Modifier votre mot de passe" class="box-button"/>
                 </div>
             <?php }
             ?>
