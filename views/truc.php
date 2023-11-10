@@ -7,7 +7,7 @@
     class Truc {
 
         public function connexion(){
-            $dbh = new PDO("mysql:dbname=vans;host=127.0.0.1; port=8889", "root", "root");
+            require __DIR__ ."/../database.php";
 
             $query = $dbh->prepare("SELECT * FROM ( SELECT * FROM `product` ORDER BY `id_product` DESC LIMIT 10 ) sub ORDER BY `id_product` ASC;");
 
@@ -18,10 +18,6 @@
         }
 
         public function card($tab){
-/*             echo "card"; */
-            /* var_dump($tab); */
-
-
             foreach($tab as $key => $element){
                 
                 echo "
