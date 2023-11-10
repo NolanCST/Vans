@@ -36,7 +36,7 @@ class  Product {
     $query->bindValue(':year', $this->year, PDO::PARAM_INT);
     $query->bindValue(':description', $this->description, PDO::PARAM_STR);
     $query->bindValue(':starting_price', $this->starting_price, PDO::PARAM_INT);
-    $query->bindValue(':end_date', $this->end_date, PDO::PARAM_INT);
+    $query->bindValue(':end_date', $this->end_date, PDO::PARAM_STR);
     $query->execute();
    }}
-?>
+   

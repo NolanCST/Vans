@@ -37,7 +37,9 @@
                     );
                     $myProduct->save();
                 }
-
+                var_dump($myProduct);
+                die();
+            ?>
                 ?>
             </section>
             <footer>
