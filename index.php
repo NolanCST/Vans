@@ -38,12 +38,27 @@
         <script>
             let r = false;
 
+            let achatInput = document.querySelector(".cardA.active .info");
+            
+            if(achatInput !== null){
+                let div = document.createElement('div');
+
+                div.innerHTML = `
+                    <form action="" method="post">
+                        <input type="number" name="new_valeur" id="new_valeur" placeholder="votre prix">
+                        <button type="submit">valider</button>
+                    </form>`;
+
+                achatInput.prepend(div);
+            }
+
+
             let doc = document.querySelectorAll(".cardA");
 
             doc.forEach( box => {
                 box.addEventListener("click", function(e){
-                    console.log("hello", box );
-                    console.log("hello", e.target.parentElement.id );
+                    console.log("hel", e );
+                    console.log("hello", e );
 
                     if(r == true || r == null){
                         box.classList.remove("active");
