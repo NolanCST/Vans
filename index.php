@@ -15,12 +15,12 @@
         <body>
             <header>
                 <?php
-                require __DIR__ . "./layouts/navigation.php";
+                    require __DIR__ . "/layouts/navigation.php";
                 ?>
             </header>
 
-            <main>
-                <section>
+            
+                <section class="section">
                   <div class="list" >
                         <?php 
                             require __DIR__ . "/layouts/truc.php";
@@ -28,10 +28,10 @@
                     </div>
                   <div class="filter"></div>
                 </section>
-            </main>
+            
                   <footer>
                     <?php
-                    require __DIR__ . "./layouts/footer.php";
+                        require __DIR__ . "/layouts/footer.php";
                     ?>
                   </footer>
         </body>
@@ -47,11 +47,11 @@
 
                     if(r == true || r == null){
                         box.classList.remove("active");
-                        document.querySelector(".list").classList.remove("active");
+                        document.querySelector(".section").classList.remove("active");
                         r = false;
                     } else if (r == false ){
                         box.classList.add("active");
-                        document.querySelector(".list").classList.add("active");
+                        document.querySelector(".section").classList.add("active");
                         r = true;
                     }
                 }); 
