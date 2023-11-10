@@ -21,7 +21,7 @@ class Login {
     }
 
     public function verification () {
-        require __DIR__."/../baseDeDonnee.php";
+        require __DIR__."/../dataBase.php";
         $query = $dbh->prepare("SELECT * FROM `user`");
         $query->execute();
         $results = $query->fetchAll();
