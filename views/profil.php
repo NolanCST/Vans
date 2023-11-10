@@ -26,20 +26,25 @@
         <main>
             <?php
             $id = $_SESSION['id'];
-            $dbh = new PDO ("mysql:dbname=vans;host=127.0.0.1", "root", "");
+            require __DIR__."/../dataBase.php";
             $query = $dbh->prepare("SELECT * FROM `user` WHERE id_user=$id");
             $query->execute();
             $results = $query->fetchAll();
             foreach ($results as $result) { ?>
-                <div class="container">
+                <form class="container" action="profil.php" method="POST">
                     <h1>Profile</h1>
-                    <p class="profilElement">Nom: <?php echo $result['lastname'] ?></p>
-                    <p class="profilElement">Prenom: <?php echo $result['firstname'] ?></p>
-                    <p class="profilElement">Email: <?php echo $result['email'] ?></p>
-                    <input type="submit" name="submit" value="Modifier votre mot de passe" class="box-button"/>
-                </div>
+                    <input class="profilElement" type="text" name="lastname" value="<?php echo $result['lastname']?>" maxlength="25" required/>
+                    <input class="profilElement" type="text" name="firstname" value="<?php echo $result['firstname']?>" maxlength="25" required/>
+                    <input class="profilElement" type="email" name="email" value="<?php echo $result['email']?>" required/>
+                    <input class="profilElement" type="password" name="password" placeholder="Modifier votre mot de passe" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required/>
+                    <input type="submit" name="submit" value="Modifier" class="box-button"/>
+            </form>
             <?php }
-            ?>
+            require __DIR__."/../classes/profil.class.php";
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                $updateUser = new Profil ($_POST["lastname"], $_POST["firstname"], $_POST["email"], password_hash($_POST["password"],PASSWORD_DEFAULT));
+                $updateUser->update();
+            } ?>
         </main>
     </body>
 </html>

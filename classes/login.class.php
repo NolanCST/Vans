@@ -40,7 +40,7 @@ class Login {
         if(!isset($loggedUser)){
             if(isset($errorMessage)) { ?>
                 <div class="alert alert-danger" role="alert">
-                <?php echo $errorMessage; ?>
+                    <?php echo $errorMessage; ?>
                 </div>
         <?php };
         } else { ?>
