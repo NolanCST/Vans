@@ -16,7 +16,7 @@
         <body>
             <!-- <header>
                 <?php
-                include __DIR__ . "/layouts/navigation.php";
+                include __DIR__ . "/navigation.php";
                 ?>
             </header> -->
             <section>

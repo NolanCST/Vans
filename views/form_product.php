@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,11 +6,11 @@
     <link rel="stylesheet" type="text/css" href="product.css" />
     <title>Formproduct</title>
 </head>
-<body>
+<body> -->
     <div class="bodyform">
     <form  class="box" action="product.php" method="POST"  >
 
-    <h1 class="box-title">Que voulez - vous vendre ?</h1>
+    <h1 class="box-title">Que voulez-vous vendre ?</h1>
 
     <label for="title">Titre de l'annonce :</label><br/>
     <input  class="box-input" name="title" type="text" maxlength="50"> </input><br/>
@@ -43,7 +43,7 @@
     <input type="submit" class="box-button" value= "Poster l'annonce"> </input><br/>
 </form>
 </div>
-</body>
-</html>
+<!-- </body>
+</html> -->
 
 
