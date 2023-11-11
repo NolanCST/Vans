@@ -1,45 +1,41 @@
-/* -------> Main <-------*/
+/* -------> Index <-------*/
 * {
    margin: 0;
    padding: 0;
 }
 
 body {
-   background-color: #9B2F05 !important;
-   width: 100vw;
-   height: 100vh;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
+    /* background-image: linear-gradient(to right top, #b79891, #ae8e87, #a5847e, #9d7b74, #94716b)!important; */
+    background-image: url(https://www.papierpeintpanoramique.fr/media/catalog/product/cache/871f459736130e239a3f5e6472128962/w/1/w12252-small.jpg);
+    /* background-image: url(https://www.papierpeintpanoramique.fr/media/catalog/product/cache/871f459736130e239a3f5e6472128962/w/1/w10348-small.jpg); */
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 main{
    position: relative;
-   width: 100%;
-   height: 90%;
-   top:10%;
-
+   width: 100vh;
+   height: 100vw;
+   /* top:10%; */
 }
 
-h1 {
-   color: goldenrod;
-}
+/* -------------> Navbar <---------------*/
 
-/* -------> Navbar <-------*/
-header {
+/* header {
    position: fixed;
    height: 10%;
    width: 100vw;
    top: 0;
    z-index: 3;
-}
-.navbar {
-   height: 100%;
-}
+} */
 
 .p_bgGreen {
-   background-color: #09433b;
+    background-image: linear-gradient(to bottom, #134e5e, #0c3f47, #0a3133);
+    justify-content: center;
 }
 
 .p_ftLogo {
@@ -47,6 +43,13 @@ header {
    font-size: 30px !important;
 }
 
+/* .collapse {
+    justify-content: space-between ;
+} */
+
+/* .navbar-nav {
+    justify-content: space-between;
+} */
 section {
    width: 100%;
    height: 100%;
@@ -55,6 +58,8 @@ section {
 }
 
 
+
+/* -----------------------> Page Index <-------------------------- */
 /* -------> list card <------- */
 .list {
    width: 82%;
@@ -122,36 +127,36 @@ section {
 
 
 .info{
-    display: grid;
-    grid-template-columns: 50%;
-    grid-template-rows: 43% 33% auto;
-    grid-template-areas:
-  "mark       model     " 
-  "year       power     " 
-  "last_price last_price";
-    height: 60%;
-    width: 100%;
+   display: grid;
+   grid-template-columns: 50%;
+   grid-template-rows: 43% 33% auto;
+   grid-template-areas:
+   "mark model" 
+   "year power" 
+   "last_price last_price";
+   height: 60%;
+   width: 100%;
 }
 .cardA.active .info{
-    overflow: auto;
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: auto;
-    grid-template-areas: 
-    "mark model"
-    "year power"
-    "last_price starting_price"
-    "id_product end_date"
-    "description description";
-    padding-left: 100px;
-    overflow-y: auto;
+   overflow: auto;
+   display: grid;
+   grid-template-columns: auto;
+   grid-template-rows: auto;
+   grid-template-areas: 
+   "mark model"
+   "year power"
+   "last_price starting_price"
+   "id_product end_date"
+   "description description";
+   padding-left: 100px;
+   overflow-y: auto;
 }
 
 .info div{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding-left: 30px;
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+   padding-left: 30px;
 }
 .cardA .cla-end_date,
 .cardA .cla-starting_price,
@@ -173,14 +178,18 @@ section {
    position: sticky;
    height: 100%;
    width: 25%;
-   background-color: #feeaa1;
+   background-image: linear-gradient(to right, #ffefba, #ffead3);
+   border-radius: 5px;
    right: 0;
 }
 
 /* ----> Section Footer <---- */
 footer{
-    position: relative;
+    position: absolute;
+    width: 100%;
+    height: 25%;
     left: 0;
+    right: 0;
     bottom: 0;
 }
 .aide {
@@ -189,15 +198,15 @@ footer{
    justify-content: space-evenly;
    background-color: rgba(0,0,0, 0.5);
    color: #ecf8f6;
-   margin-top: 4%;
-   padding-top: 2%;
+   /* margin-top: 4%; */
+   /* padding-top: 2%; */
    align-items: baseline;
    font-size: 12px;
  }
 
  .p_ftLogo1 {
    font-family: "Ms Madi", cursive !important;
-   font-size: 70px !important;
+   font-size: 60px !important;
  }
  
  /* .Logo-FB, .Logo-You, .Logo-Insta, .Logo-Twit {
