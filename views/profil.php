@@ -18,7 +18,7 @@ foreach ($results as $result) { ?>
         <input class="profilElement" type="text" name="lastname" value="<?php echo $result['lastname']?>" maxlength="25" required/>
         <input class="profilElement" type="text" name="firstname" value="<?php echo $result['firstname']?>" maxlength="25" required/>
         <input class="profilElement" type="email" name="email" value="<?php echo $result['email']?>" required/>
-        <input class="profilElement" type="password" name="password" placeholder="Modifier votre mot de passe" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required/>
+        <input class="profilElement" type="password" name="password" placeholder="Modifier votre mot de passe" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*_=+]).{12,}" required/>
         <input type="submit" name="submit" value="Modifier" class="profilButton"/>
     </form>
 <?php }
