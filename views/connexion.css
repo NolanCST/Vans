@@ -1,4 +1,4 @@
-.box {
+.connexionContainer {
    width: 45vw;
    height: 55vh;
    display: flex;
@@ -21,6 +21,7 @@
    color: #feaa07;
 }
 /* .box-input {
+
    width: 25vw;
    height: 5vh;
    border-radius: 10px;
