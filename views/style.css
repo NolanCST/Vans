@@ -9,18 +9,20 @@ body {
     background-image: url(https://www.papierpeintpanoramique.fr/media/catalog/product/cache/871f459736130e239a3f5e6472128962/w/1/w12252-small.jpg);
     /* background-image: url(https://www.papierpeintpanoramique.fr/media/catalog/product/cache/871f459736130e239a3f5e6472128962/w/1/w10348-small.jpg); */
     width: 100vw;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
+body.active{
+    height: 100vh;
+}
 
 main{
-   position: relative;
-   width: 100vh;
-   height: 100vw;
-   /* top:10%; */
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    padding-top: 70px;
 }
 
 /* -------------> Navbar <---------------*/
@@ -62,14 +64,15 @@ section {
 /* -----------------------> Page Index <-------------------------- */
 /* -------> list card <------- */
 .list {
-   width: 82%;
-   height: 100%;
-   /* background-color: #d6955b; */
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: space-evenly;
-   /* padding: 20px 0; */
-   overflow-y: auto;
+    width: 86%;
+    height: 100%;
+    /* background-color: #d6955b; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 0px 12px;
+    overflow-y: auto;
+    gap: 30px;
 }
 .section.active {
     background-color: rgb(36, 36, 36);
@@ -77,7 +80,7 @@ section {
 .cardA{
     margin: 20px 0;
     height: 50%;
-    width: 40%;
+    width: 314px;
     background-color: #ecf8f6;
     display: flex;
     flex-direction: column;
@@ -86,10 +89,15 @@ section {
 }
 .cardA.active{
     position: absolute;
-    height: 96%;
-    width: 96%;
+    height: 900px;
+    width: 98%;
     z-index: 4;
-    transform: translate(12%);
+    transform: translate(100px);
+    top: 7%;
+    border-radius: 20px;
+}
+body.active main{
+    background-color: black;
 }
 .image{
     background-color: red;
@@ -124,7 +132,9 @@ section {
     grid-area: description;
 }
 
-
+.cardA.active .image{
+    height: 400px;
+}
 
 .info{
    display: grid;
@@ -150,6 +160,7 @@ section {
    "description description";
    padding-left: 100px;
    overflow-y: auto;
+   height: 500px;
 }
 
 .info div{
@@ -173,24 +184,48 @@ section {
 .cardA.active .cla-id_product{
     display: flex;
 }
+
+.formNewPrice{
+    display: none;
+}
+.cardA.active .formNewPrice{
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#new_valeur{
+    border: none;
+    border-bottom: 2px solid black;
+    width: 400px;
+    height: 40px;
+    border-radius: 5px;
+    padding-left: 10px;
+    appearance: textfield;
+}
+.formNewPrice button{
+    width: 120px;
+    height: 40px;
+    border-radius: 5px;
+    background: #134e5e;
+    border: none;
+    color: white;
+}
 /* -------> filter <------- */
 .filter {
-   position: sticky;
-   height: 100%;
-   width: 25%;
-   background-image: linear-gradient(to right, #ffefba, #ffead3);
-   border-radius: 5px;
-   right: 0;
+    position: sticky;
+    height: 100%;
+    width: 14%;
+    background-image: linear-gradient(to right, #ffefba, #ffead3);
+    border-radius: 5px;
+    right: 0;
+    min-width: 200px;
 }
 
 /* ----> Section Footer <---- */
 footer{
-    position: absolute;
     width: 100%;
     height: 25%;
-    left: 0;
-    right: 0;
-    bottom: 0;
 }
 .aide {
    display: flex;

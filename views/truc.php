@@ -33,13 +33,21 @@
                             echo "<div class='cla-$x'>". $x . " : ". $value . " €</div>" ;
                         } else if ($x == "power"){
                             echo "<div class='cla-$x'>". $x . " : ". $value . " ch</div>" ;
-                        } else {
+                        } /* else if($x == 'image'){
+                            echo "<div class='cla-$x'> <img src='uploads/".$x."'></div>";
+                        }  */else {
                             echo "<div class='cla-$x'>". $x . " : ". $value . " </div>" ;
                         }
                     }
                 }
                 echo     
                     "</div>
+                    <div class='formNewPrice'>
+                        <form action='' method='post'>
+                            <input type='number' name='new_valeur' id='new_valeur' placeholder='votre prix'>
+                            <button type='submit'>valider</button>
+                        </form>
+                    </div>
                 </div>";
             }
         }
