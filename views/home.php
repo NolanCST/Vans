@@ -12,33 +12,22 @@
 <script>
     let r = false;
 
-    let achatInput = document.querySelector(".cardA.active .info");
-            
-            if(achatInput !== null){
-                let div = document.createElement('div');
-
-                div.innerHTML = `
-                    <form action="" method="post">
-                        <input type="number" name="new_valeur" id="new_valeur" placeholder="votre prix">
-                        <button type="submit">valider</button>
-                    </form>`;
-
-                achatInput.prepend(div);
-            }
-    let doc = document.querySelectorAll(".cardA");
+    let doc = document.querySelectorAll(".cardA .image, .cardA .info");
 
     doc.forEach(box => {
         box.addEventListener("click", function(e) {
-            console.log("hello", box);
+            console.log("hello", box.parentElement);
             console.log("hello", e.target.parentElement.id);
 
             if (r == true || r == null) {
-                box.classList.remove("active");
+                box.parentElement.classList.remove("active");
                 document.querySelector(".list").classList.remove("active");
+                document.querySelector("body").classList.remove("active");
                 r = false;
             } else if (r == false) {
-                box.classList.add("active");
+                box.parentElement.classList.add("active");
                 document.querySelector(".list").classList.add("active");
+                document.querySelector("body").classList.add("active");
                 r = true;
             }
         });
