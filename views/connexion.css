@@ -10,8 +10,7 @@
    border-radius: 20px;
    position: relative;
    top: 15%;
-   /* background-image: url(https://img.freepik.com/photos-premium/vieille-voiture-vintage-dans-paysage-onirique_905683-50947.jpg); */
-   /* background-image: url(https://www.google.com/imgres?imgurl=https%3A%2F%2Fimg.freepik.com%2Fphotos-gratuite%2Flampe-brillante-pare-chocs-vieux-phare_1203-4248.jpg%3Fsize%3D626%26ext%3Djpg%26ga%3DGA1.1.386372595.1697587200%26semt%3Dais&tbnid=a5M_0oi8qL91QM&vet=12ahUKEwidjuH_qbyCAxXjYKQEHXN3CZIQMygIegQIARBi..i&imgrefurl=https%3A%2F%2Ffr.freepik.com%2Fphotos%2Ffond-39-ecran-voiture-ancienne%2F5&docid=oqsd4aDBYwx9hM&w=626&h=418&itg=1&q=fond%20d%27%C3%A9cran%20photographie%20phare%20vieille%20voiture&hl=fr&client=firefox-b-d&ved=2ahUKEwidjuH_qbyCAxXjYKQEHXN3CZIQMygIegQIARBi); */
+   left: 27%;
    background-repeat: no-repeat;
    background-size: cover;
 
@@ -20,21 +19,6 @@
 .box-title {
    color: #feaa07;
 }
-/* .box-input {
-
-   width: 25vw;
-   height: 5vh;
-   border-radius: 10px;
-   margin-bottom: 25px;
-   min-height: 36px;
-} */
-
-/* .box-button {
-   width: 150vw;
-   height: 5vh;
-   background-color: teal;
-   border-radius: 10px;
-} */
 
 .form-group {
    padding-top: 5%;
