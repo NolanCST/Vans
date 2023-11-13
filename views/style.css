@@ -129,6 +129,9 @@ body.active main {
 .cla-description {
    grid-area: description;
 }
+.cla-title{
+    grid-area: title;
+}
 
 .cardA.active .image {
    height: 400px;
@@ -136,12 +139,12 @@ body.active main {
 
 .info {
    display: grid;
-   grid-template-columns: 50%;
+   grid-template-columns: 100%;
    grid-template-rows: 43% 33% auto;
    grid-template-areas:
-      "mark model"
-      "year power"
-      "last_price last_price";
+      "title"
+      "last_price"
+      "end_date";
    height: 60%;
    width: 100%;
 }
@@ -151,11 +154,12 @@ body.active main {
    grid-template-columns: auto;
    grid-template-rows: auto;
    grid-template-areas:
-      "mark model"
-      "year power"
-      "last_price starting_price"
-      "id_product end_date"
-      "description description";
+        "title title"     
+        "mark model"
+        "year power"
+        "last_price starting_price"
+        "id_product end_date"
+        "description description";
    padding-left: 100px;
    overflow-y: auto;
    height: 500px;
@@ -167,17 +171,23 @@ body.active main {
    align-items: center;
    padding-left: 30px;
 }
-.cardA .cla-end_date,
 .cardA .cla-starting_price,
 .cardA .cla-description,
 .cardA .cla-id_product,
-.cardA .cla-0 {
+.cardA .cla-0,
+.cardA .cla-image,
+.cardA .cla-power,
+.cardA .cla-model,
+.cardA .cla-year,
+.cardA .cla-mark
+ {
    display: none;
 }
 
 .cardA.active .cla-end_date,
 .cardA.active .cla-starting_price,
 .cardA.active .cla-description,
+.cardA.active .cla-id_product,
 .cardA.active .cla-id_product {
    display: flex;
 }
