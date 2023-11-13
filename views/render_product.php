@@ -22,7 +22,9 @@ session_start(); ?>
     <div id="resultats">
         <div id="nbr"><?=count($tab). " ".(count($tab)>1?"résultats trouvés":"résultat trouvé") ?></div>
         <ol>
-            <li>Résultats 1</li>
+            <?php for($i=0; $i <count($tab);$i++) { ?>  
+            <li><?php echo $tab[$i]["title"] ?></li>
+            <?php } ?>
         </ol>
     </div>
 <?php } ?>
