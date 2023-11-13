@@ -59,6 +59,22 @@ section {
    flex-direction: row;
 }
 
+.itemNavBar {
+   width: 60vw;
+   justify-content: space-between;
+}
+
+.btn-right {
+   display: flex;
+   flex-direction: row;
+   gap: 5%;
+   margin-right: 2%;
+}
+
+.deconnexionBtn {
+   background-color: #5c1e14 !important;
+}
+
 /* -----------------------> Page Index <-------------------------- */
 /* -------> list card <------- */
 .list {
