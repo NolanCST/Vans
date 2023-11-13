@@ -42,9 +42,12 @@ section {
    flex-direction: row;
 }
 
+.searchNavBar {
+}
+
 .itemNavBar {
    width: 60vw;
-   justify-content: space-between;
+   justify-content: space-around;
 }
 
 .btn-right {
@@ -247,7 +250,14 @@ footer {
    font-size: 60px !important;
 }
 
-/* .Logo-FB, .Logo-You, .Logo-Insta, .Logo-Twit {
+.miniLogo {
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+}
+
+.iconsSocial {
    width: 2vw;
    margin: 2%;
- } */
+}
