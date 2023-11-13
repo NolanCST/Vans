@@ -4,9 +4,9 @@ session_start(); ?>
 <section>
     <div class="list">
         <?php
-        require __DIR__ . "/truc.php";
+        require __DIR__ . "/popup.php";
         ?>
-    </div>
+    </div></div>
     <div class="filter"></div>
 
 </section>

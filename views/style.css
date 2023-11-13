@@ -14,6 +14,7 @@ body {
 }
 body.active {
    height: 100vh;
+   overflow: hidden;
 }
 
 main {
@@ -90,16 +91,20 @@ section {
    width: 98%;
    z-index: 4;
    transform: translate(100px);
-   top: 7%;
+   top: 16%;
    border-radius: 20px;
+}
+.cardA.active .cla-image {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+}
+.cardA.active .cla-image img{
+   width: fit-content;
 }
 body.active main {
    background-color: black;
-}
-.image {
-   background-color: red;
-   width: 100%;
-   height: 40%;
 }
 .cla-mark {
    grid-area: mark;
@@ -131,6 +136,10 @@ body.active main {
 .cla-title {
    grid-area: title;
 }
+.cla-image{
+   grid-area: image;
+   background-color: #134e5e;
+}
 
 .cardA.active .image {
    height: 400px;
@@ -139,31 +148,39 @@ body.active main {
 .info {
    display: grid;
    grid-template-columns: 100%;
-   grid-template-rows: 43% 33% auto;
+   grid-template-rows: 40% 30% 15% 15%;
    grid-template-areas:
-      "title"
-      "last_price"
-      "end_date";
-   height: 60%;
+ "image     " 
+ "title     " 
+ "last_price" 
+ "end_date  ";
+   height: 100%;
    width: 100%;
 }
 .cardA.active .info {
    overflow: auto;
    display: grid;
-   grid-template-columns: auto;
-   grid-template-rows: auto;
+   grid-template-columns: 50%;
+   grid-template-rows: 40% auto;
    grid-template-areas:
-      "title title"
-      "mark model"
-      "year power"
-      "last_price starting_price"
-      "id_product end_date"
-      "description description";
-   padding-left: 100px;
+ "image       image         " 
+ "title       title         " 
+ "mark        model         " 
+ "year        power         " 
+ "starting_price last_price " 
+ " end_date   ." 
+ "description description   ";
    overflow-y: auto;
-   height: 500px;
+   height: 800px;
 }
-
+.cla-image{
+   
+   padding: 30px 30px 30px 0;
+}
+.cla-image img{
+   width: 100%;
+   height: 100%;
+}
 .info div {
    display: flex;
    justify-content: flex-start;
@@ -174,7 +191,6 @@ body.active main {
 .cardA .cla-description,
 .cardA .cla-id_product,
 .cardA .cla-0,
-.cardA .cla-image,
 .cardA .cla-power,
 .cardA .cla-model,
 .cardA .cla-year,
@@ -185,8 +201,10 @@ body.active main {
 .cardA.active .cla-end_date,
 .cardA.active .cla-starting_price,
 .cardA.active .cla-description,
-.cardA.active .cla-id_product,
-.cardA.active .cla-id_product {
+.cardA.active .cla-power,
+.cardA.active .cla-model,
+.cardA.active .cla-year,
+.cardA.active .cla-mark {
    display: flex;
 }
 
