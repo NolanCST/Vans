@@ -1,49 +1,50 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="product.css" />
-    <title>Formproduct</title>
-</head>
-<body> -->
-    <div class="bodyform">
-    <form  class="box" action="product.php" method="POST"  >
-
-    <h1 class="box-title">Que voulez-vous vendre ?</h1>
-
-    <label for="title">Titre de l'annonce :</label><br/>
-    <input  class="box-input" name="title" type="text" maxlength="50" required> </input><br/>
-
-   <label for="mark">Marque:</label><br/>
-    <input class="box-input"  name="mark" type="text" required> </input><br/>
-    
-    <label for="model">Modèle :</label><br/>
-    <input class="box-input"  name="model" type="text" required> </input><br/>
-
-    <label for="power">Puissance:</label><br/>
-    <input  class="box-input" name="power" type="text" required> </input><br/>
-
-
-    <label for="year">Année :</label><br/>
-    <input  class="box-input" name="year" type="year" required> </input><br/>
-
-
-    <label for="description">Description:</label><br/>
-    <input  class="box-input" name="description" type="text" required> </input><br/>
-
-    
-    <label for="starting_price">Prix de départ:</label><br/>
-    <input  class="box-input" name="starting_price" type="number" required> </input><br/>
-
-
-    <label for="end_date">Date de fin de l'enchère:</label><br/>
-    <input  class="date-input" name="end_date" type="date" required> </input><br/>
-
-    <input type="submit" class="box-button" value= "Poster l'annonce"> </input><br/>
-</form>
-</div>
-<!-- </body>
-</html> -->
+<section class="productContainer">
+    <form class="form-floating productForm" action="product.php" method="post" name="product">
+        <h1 class="box-title productTitle">Que voulez-vous vendre ?</h1>
+        <div class="form-floating mb-3 formProduct1">
+            <input type="text" class="form-control transparent-input productTitleInput" name="title" placeholder="name@example.com">
+            <label>Titre de l'annonce</label>
+        </div>
+        <div class="boxProduct">
+            <div class="formProduct2">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control transparent-input productInput" name="mark" placeholder="Marque">
+                    <label>Marque</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control transparent-input productInput" name="model" placeholder="Modele">
+                    <label>Modele</label>
+                </div>
+            </div>
+            <div class="formProduct3">
+                <div class="form-floating mb-3">
+                    <input type="number" class="form-control transparent-input productInput" name="power" placeholder="Puissance (CH)">
+                    <label>Puissance (CH)</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="number" class="form-control transparent-input productInput" name="year" placeholder="Annee">
+                    <label>Annee</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-floating mb-3 formProduct4">
+            <textarea type="text" class="form-control transparent-input productTextarea" name="description" rows="20" placeholder="Description"></textarea>
+            <label>Description</label>
+        </div>
+        <div class="formProduct5">
+            <div class="form-floating mb-3">
+                <input type="number" class="form-control transparent-input productInput" name="starting_price" placeholder="Prix de départ">
+                <label>Prix de départ</label>
+            </div>
+            <div class="form-floating">
+                <input type="date" class="form-control transparent-input productInput" name="end_date" placeholder="Date de fin de l'enchère">
+                <label>Date de fin de l'enchère</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Poster l'annonce" name="submit" class="btn btn-login btn-warning">
+        </div>
+    </form>
+</section>
 
 
