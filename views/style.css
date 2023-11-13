@@ -5,9 +5,7 @@
 }
 
 body {
-   /* background-image: linear-gradient(to right top, #b79891, #ae8e87, #a5847e, #9d7b74, #94716b)!important; */
    background-image: url(https://www.papierpeintpanoramique.fr/media/catalog/product/cache/871f459736130e239a3f5e6472128962/w/1/w12252-small.jpg);
-   /* background-image: url(https://www.papierpeintpanoramique.fr/media/catalog/product/cache/871f459736130e239a3f5e6472128962/w/1/w10348-small.jpg); */
    width: 100vw;
    display: flex;
    flex-direction: column;
@@ -28,14 +26,6 @@ main {
 
 /* -------------> Navbar <---------------*/
 
-/* header {
-   position: fixed;
-   height: 10%;
-   width: 100vw;
-   top: 0;
-   z-index: 3;
-} */
-
 .p_bgGreen {
    background-image: linear-gradient(to bottom, #134e5e, #0c3f47, #0a3133);
    justify-content: center;
@@ -46,18 +36,27 @@ main {
    font-size: 30px !important;
 }
 
-/* .collapse {
-    justify-content: space-between ;
-} */
-
-/* .navbar-nav {
-    justify-content: space-between;
-} */
 section {
    width: 100%;
    height: 100%;
    display: flex;
    flex-direction: row;
+}
+
+.itemNavBar {
+   width: 60vw;
+   justify-content: space-between;
+}
+
+.btn-right {
+   display: flex;
+   flex-direction: row;
+   gap: 5%;
+   margin-right: 2%;
+}
+
+.deconnexionBtn {
+   background-color: #5c1e14 !important;
 }
 
 /* -----------------------> Page Index <-------------------------- */
@@ -134,8 +133,8 @@ body.active main {
 .cla-description {
    grid-area: description;
 }
-.cla-title{
-    grid-area: title;
+.cla-title {
+   grid-area: title;
 }
 .cla-image{
    grid-area: image;
@@ -195,8 +194,7 @@ body.active main {
 .cardA .cla-power,
 .cardA .cla-model,
 .cardA .cla-year,
-.cardA .cla-mark
- {
+.cardA .cla-mark {
    display: none;
 }
 
@@ -258,8 +256,6 @@ footer {
    justify-content: space-evenly;
    background-color: rgba(0, 0, 0, 0.5);
    color: #ecf8f6;
-   /* margin-top: 4%; */
-   /* padding-top: 2%; */
    align-items: baseline;
    font-size: 12px;
 }

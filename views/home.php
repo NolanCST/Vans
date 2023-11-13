@@ -1,7 +1,5 @@
 <?php ob_start();
-
-include '/test.php'
-?>
+session_start(); ?>
 
 <section>
     <div class="list">

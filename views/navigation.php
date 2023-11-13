@@ -26,9 +26,9 @@
                       <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse " id="navbarSupportedContent">
-                      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                      <ul class="navbar-nav mx-auto mb-2 mb-lg-0 itemNavBar">
                         <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="home.php">Accueil</a>
+                          <a class="nav-link" aria-current="page" href="home.php">Accueil</a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" href="product.php">Vendre</a>
@@ -36,7 +36,8 @@
                         <li class="nav-item">
                           <a class="nav-link" href="render_product.php">Annonces</a>
                         </li>
-                        
+                        <?php
+                      if(isset($_SESSION["email"])){ ?>
                         <li class="nav-item dropdown">
                           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Compte
@@ -44,14 +45,19 @@
                           <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="profil.php">Profils</a></li>
                             <li><a class="dropdown-item" href="#">Historique</a></li>
-                            <li><a class="dropdown-item" href="login.php">Connexion</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="../connexion/logout.php">Déconnexion</a></li>
                           </ul>
                         </li>
+                      <?php } ?>
                       </ul>
-                      <a class="nav-link" href="register.php"><button class="btn btn-outline-warning" type="submit">Inscription</button></a>
-                      
+                      <?php
+                      if(!isset($_SESSION["email"])){ ?>
+                        <div class="btn-right">
+                          <a class="nav-link" href="login.php"><button class="btn btn-warning" type="submit">Connexion</button></a>
+                          <a class="nav-link" href="register.php"><button class="btn btn-outline-warning" type="submit">Inscription</button></a>
+                        </div>
+                      <?php } else { ?>
+                        <a class="nav-link" href="../connexion/logout.php"><button class="btn deconnexionBtn" type="submit">Deconnexion</button></a>
+                      <?php }?>
                       <!-- <form class="d-flex" role="search">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
