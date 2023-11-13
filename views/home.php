@@ -6,8 +6,7 @@ session_start(); ?>
         <?php
         require __DIR__ . "/popup.php";
         ?>
-    </div></div>
-    <div class="filter"></div>
+    </div>
 
 </section>
 

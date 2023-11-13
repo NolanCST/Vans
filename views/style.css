@@ -22,6 +22,7 @@ main {
    width: 100vw;
    height: 100vh;
    padding-top: 70px;
+   overflow: auto;
 }
 
 /* -------------> Navbar <---------------*/
@@ -62,9 +63,8 @@ section {
 /* -----------------------> Page Index <-------------------------- */
 /* -------> list card <------- */
 .list {
-   width: 86%;
+   width: 100%;
    height: 100%;
-   /* background-color: #d6955b; */
    display: flex;
    flex-wrap: wrap;
    justify-content: space-evenly;
@@ -233,16 +233,6 @@ body.active main {
    background: #134e5e;
    border: none;
    color: white;
-}
-/* -------> filter <------- */
-.filter {
-   position: sticky;
-   height: 100%;
-   width: 14%;
-   background-image: linear-gradient(to right, #ffefba, #ffead3);
-   border-radius: 5px;
-   right: 0;
-   min-width: 200px;
 }
 
 /* ----> Section Footer <---- */
