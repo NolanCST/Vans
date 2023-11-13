@@ -66,7 +66,7 @@ class  Product {
         <div class="alert alert-success" role="alert">
             Votre annonce a été créee avec succès.
         </div>
-        <?php header("refresh: 2, home.php");
+        <?php header("Location: home.php");
         exit;
 }
    }}
