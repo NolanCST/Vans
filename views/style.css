@@ -42,9 +42,6 @@ section {
    flex-direction: row;
 }
 
-.searchNavBar {
-}
-
 .itemNavBar {
    width: 60vw;
    justify-content: space-around;
