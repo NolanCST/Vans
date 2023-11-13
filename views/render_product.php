@@ -1,53 +1,117 @@
-
 <?php ob_start();
 session_start(); ?>
+
 <?php
     require __DIR__."/../dataBase.php";
+    $where="";
     @$keywords=$_GET["keywords"];
     @$valider=$_GET["valider"];
     if(isset($valider) && !empty(trim($keywords))) {
-        // include("render_product.php");
+        // requête pour les recherches générales 
         $res=$dbh->prepare("select * from product where title like '%$keywords%' or mark like '%$keywords%' or model like '%$keywords%' or power like '%$keywords%' or year like '%$keywords%' or end_date like '%$keywords%' or last_price like '%$keywords%' or description like '%$keywords%' or starting_price like '%$keywords%' ");
         $res->setFetchMode(PDO::FETCH_ASSOC);
         $res->execute();
-        $tab=$res->fetchAll();
+        $tabs=$res->fetchAll();
         $afficher="oui";
     }
 ?>
-<form class="form-filter" name="fo" method="get" action="">
-    <input class="input-filter-search" value="<?php echo $keywords ?>" type="text" name="keywords"  placeholder="Mots-clés" />
-    <input class="input-filter-submit" type="submit" name="valider" value="Rechercher" />
+
+<!-- Formulaire input pour la recherche rapide -->
+<form class="form-filter" name="fo" method="post" action="">
+    <h1> Recherche rapide</h1>
+    <SELECT class="form-control" id="marque" name="marque"  >
+        <option >--marque--</option>
+            <?php 
+                $res=$dbh->prepare("SELECT DISTINCT mark FROM product");
+                $res->setFetchMode(PDO::FETCH_ASSOC);
+                $res->execute();
+                $marque=$res->fetchAll();
+
+                for($i=0; $i <count($marque);$i++) { ?>  
+                    <option><?php echo $marque[$i]["mark"] ?></option>
+                    <?php }
+            ?>
+    </SELECT>
+    <SELECT class="form-control" id="model" name="modele"  >
+        <option >--modele--</option>
+            <?php 
+                $res=$dbh->prepare("SELECT DISTINCT model FROM product");
+                $res->setFetchMode(PDO::FETCH_ASSOC);
+                $res->execute();
+                $modele=$res->fetchAll();
+
+                for($i=0; $i <count($modele);$i++) { ?>  
+                    <option><?php echo $modele[$i]["model"] ?></option>
+                    <?php }
+            ?>
+    </SELECT>
+
+
+    <input class="input-filter-submit" type="submit" name="multisearch" value="Rechercher" />
 </form>
-<?php if (@$afficher =="oui") {?>
-    <div id="resultats">
-        <div id="nbr"><?=count($tab). " ".(count($tab)>1?"résultats trouvés":"résultat trouvé") ?></div>
-        <ol>
-            <?php for($i=0; $i <count($tab);$i++) { ?>  
-            <li><?php echo $tab[$i]["title"] ?></li>
-            <?php } ?>
-        </ol>
-    </div>
-<?php } ?>
 
 <?php
 
+// -----------------------------------------------------------
 
 
-$query = $dbh->prepare("SELECT * FROM product");
+if(isset($_POST['multisearch']))
+    {  
+        $where = "select * from product where ";
+        if ( !empty($_POST['marque']) ) 
+        {
+            $where = $where . 'mark like \'%' . $_POST['marque'] . '%\'';
+        }
+        if ( !empty($_POST['marque']) && !empty( $_POST['modele'] ) ) {
+            $where = $where . 'or ';
+        }
+        if ( !empty($_POST['modele']) ) 
+        {
+            $where = $where . 'model like \'%' . $_POST['modele'] . '%\'';
+        }
+      
+            $query = $dbh->prepare($where);
+        $query->execute();
 
-$query->execute();
-
-$results = $query->fetchAll();
+        $results = $query->fetchAll();
 
 
-foreach ($results as $result) {
-echo "<h1> Vente N° $result[id_product]: </h1>";
-echo "<h2> Titre : $result[title]</h2>"; 
-echo "<p> Description : $result[description]</p>";
-echo "<p> Prix de départ : $result[starting_price]</p>";
- echo "<p> Date de fin : $result[end_date]</p>";
- echo "<p> ___________________</p>";
+        foreach ($results as $result) {
+        echo "<h1> Vente N° $result[id_product]: </h1>";
+        echo "<h2> Titre : $result[title]</h2>"; 
+        echo "<p> Description : $result[description]</p>";
+        echo "<p> Prix de départ : $result[starting_price]</p>";
+        echo "<p> Date de fin : $result[end_date]</p>";
+        echo "<p> ___________________</p>";
+        }
+    }else if (@$afficher =="oui") {
+            foreach ($tabs as $tab) {
+                echo "<h1> Vente N° $tab[id_product]: </h1>";
+                echo "<h2> Titre : $tab[title]</h2>"; 
+                echo "<p> Description : $tab[description]</p>";
+                echo "<p> Prix de départ : $tab[starting_price]</p>";
+                echo "<p> Date de fin : $tab[end_date]</p>";
+                echo "<p> ___________________</p>";
+                }
+    } else {
+    $query = $dbh->prepare("SELECT * FROM product");
+    $query->execute();
+
+    $results = $query->fetchAll();
+
+
+    foreach ($results as $result) {
+    echo "<h1> Vente N° $result[id_product]: </h1>";
+    echo "<h2> Titre : $result[title]</h2>"; 
+    echo "<p> Description : $result[description]</p>";
+    echo "<p> Prix de départ : $result[starting_price]</p>";
+    echo "<p> Date de fin : $result[end_date]</p>";
+    echo "<p> ___________________</p>";
+    }
 }
+
+
+// requête générale de la database
 ?>
 
 <!-- <div class="annonceContainer">
