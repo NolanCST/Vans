@@ -47,9 +47,9 @@
                         } else if ($x == "power"){
                             echo "<div class='cla-$x'>". $x . " : ". $value . " ch</div>" ;
 
-
-                        } else if($x == 'id_product'){
-                            echo "<div class='cla-$x'> <img src='". $this->getImage($x) ."'></div>";
+                        
+                        // } else if($x == 'id_product'){
+                        //     echo "<div class='cla-$x'> <img src='". $this->getImage($x) ."'></div>";
 
 
                         } else {

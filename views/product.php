@@ -1,4 +1,5 @@
-<?php ob_start(); ?>
+<?php ob_start();
+session_start(); ?>
 
 
 <?php
@@ -8,7 +9,6 @@ require __DIR__ . "/../classes/products.class.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $myProduct = new Product(
-
         $_POST["title"],
         $_POST["mark"],
         $_POST["model"],
