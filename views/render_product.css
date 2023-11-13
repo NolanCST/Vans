@@ -1,0 +1,39 @@
+
+.form-filter {
+    background-color: rgba(0,0,0, 0.5);
+    padding: 60px;
+}
+
+.input-filter-search {
+    width: 400px;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+}
+
+.input-filter-submit {
+    background-color: #feaa07;
+    width: 200px;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+#resultats {
+    width: 620px;
+    font-size: 14px;
+    margin: 20px auto;
+    color: #fff;
+    text-align: left;
+}
+
+#nbr {
+    color: #fa2;
+    font-family: 'Raleway';
+    font-size: 16px;
+    border-bottom: solid 1px #888;
+    padding: 10px 0;
+}
