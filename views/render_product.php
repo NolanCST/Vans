@@ -1,4 +1,6 @@
-<?php ob_start(); ?>
+
+<?php ob_start();
+session_start(); ?>
 <?php
     require __DIR__."/../dataBase.php";
     @$keywords=$_GET["keywords"];
@@ -24,6 +26,7 @@
         </ol>
     </div>
 <?php } ?>
+
 <?php
 
 

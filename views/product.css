@@ -1,50 +1,44 @@
-.bodyform {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding-top: 30%;
+.productContainer {
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }
 
-form.box {
-  width: 45vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  padding: 3%;
-  background-color: #feeaa1;
-  border-radius: 20px;
+.productForm {
+   width: 55vw;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-around;
+   padding: 3%;
+   background-color: rgba(0, 0, 0, 0.5);
+   border-radius: 20px;
+   background-repeat: no-repeat;
+   background-size: cover;
 }
 
-.box-input {
-  width: 40vw;
-  height: 5vh;
-  border-radius: 10px;
-  border: 1px solid #09433b;
-  margin-bottom: -10px;
-  margin-top: -10px;
-}
-.date-input {
-  width: 40%;
-  border-radius: 10px;
-  border: 1px solid #09433b;
-  padding-left: 6%;
-  padding-right: 6%;
-  text-align: center;
-  margin-bottom: 5%;
+.boxProduct,
+.formProduct5 {
+   width: 40vw;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
 }
 
-.box-button {
-  width: 30vw;
-  height: 5vh;
-  border-radius: 10px;
-  border: 1px solid #09433b;
+.productTitle {
+   padding-bottom: 1%;
+   color: #feaa07;
 }
-.box-title {
-  text-align: center;
-  font-size: 50px;
-  padding-bottom: 10%;
+
+.productInput {
+   width: 19vw !important;
+}
+
+.productTitleInput {
+   width: 40vw !important;
+}
+
+.productTextarea {
+   width: 40vw !important;
+   height: 20vh !important;
 }
