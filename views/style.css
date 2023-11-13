@@ -25,6 +25,10 @@ main {
    overflow: auto;
 }
 
+h1, h2, p {
+   color : white
+}
+
 /* -------------> Navbar <---------------*/
 
 .p_bgGreen {
