@@ -22,6 +22,7 @@ main {
    width: 100vw;
    height: 100vh;
    padding-top: 70px;
+   overflow: auto;
 }
 
 /* -------------> Navbar <---------------*/
@@ -98,9 +99,8 @@ section {
    display: flex;
    justify-content: center;
    align-items: center;
-
 }
-.cardA.active .cla-image img{
+.cardA.active .cla-image img {
    width: fit-content;
 }
 body.active main {
@@ -136,7 +136,7 @@ body.active main {
 .cla-title {
    grid-area: title;
 }
-.cla-image{
+.cla-image {
    grid-area: image;
    background-color: #134e5e;
 }
@@ -150,10 +150,10 @@ body.active main {
    grid-template-columns: 100%;
    grid-template-rows: 40% 30% 15% 15%;
    grid-template-areas:
- "image     " 
- "title     " 
- "last_price" 
- "end_date  ";
+      "image     "
+      "title     "
+      "last_price"
+      "end_date  ";
    height: 100%;
    width: 100%;
 }
@@ -163,21 +163,20 @@ body.active main {
    grid-template-columns: 50%;
    grid-template-rows: 40% auto;
    grid-template-areas:
- "image       image         " 
- "title       title         " 
- "mark        model         " 
- "year        power         " 
- "starting_price last_price " 
- " end_date   ." 
- "description description   ";
+      "image       image         "
+      "title       title         "
+      "mark        model         "
+      "year        power         "
+      "starting_price last_price "
+      " end_date   ."
+      "description description   ";
    overflow-y: auto;
    height: 800px;
 }
-.cla-image{
-   
+.cla-image {
    padding: 30px 30px 30px 0;
 }
-.cla-image img{
+.cla-image img {
    width: 100%;
    height: 100%;
 }
