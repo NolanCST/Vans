@@ -37,6 +37,11 @@ class Profil {
         $query->bindValue(':email', $this->email, PDO::PARAM_STR);
         $query->bindValue(':password', $this->password, PDO::PARAM_STR);
         $results = $query->execute();
+        if($results){ ?>
+            <div class="alert alert-success" role="alert">
+                Vos modifications ont bien été prise en compte.
+            </div>
+        <?php };
     }
 
 }

@@ -8,7 +8,7 @@ body {
    /* background-image: linear-gradient(to right top, #b79891, #ae8e87, #a5847e, #9d7b74, #94716b)!important; */
    background-image: url(https://www.papierpeintpanoramique.fr/media/catalog/product/cache/871f459736130e239a3f5e6472128962/w/1/w12252-small.jpg);
    /* background-image: url(https://www.papierpeintpanoramique.fr/media/catalog/product/cache/871f459736130e239a3f5e6472128962/w/1/w10348-small.jpg); */
-   width: 97.5vw;
+   width: 100vw;
    display: flex;
    flex-direction: column;
    align-items: center;
