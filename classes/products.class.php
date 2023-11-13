@@ -50,14 +50,6 @@ class  Product {
         }
     }
 
-
-
-
-
-
-
-
-
    public function save () {
     require __DIR__."/../dataBase.php";
     $query=$dbh->prepare("INSERT INTO `product` (title,mark,model,power,year,description,starting_price, end_date) VALUES (:title,  :mark,:model, :power, :year, :description,:starting_price, :end_date)");
@@ -69,6 +61,12 @@ class  Product {
     $query->bindValue(':description', $this->description, PDO::PARAM_STR);
     $query->bindValue(':starting_price', $this->starting_price, PDO::PARAM_INT);
     $query->bindValue(':end_date', $this->end_date, PDO::PARAM_STR);
-    $query->execute();
+    $results=$query->execute();
+    if($results){ ?>
+        <div class="alert alert-success" role="alert">
+            Votre annonce a été créee avec succès.
+        </div>
+        <?php header("refresh: 2, home.php");
+        exit;
+}
    }}
-   
