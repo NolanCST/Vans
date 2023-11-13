@@ -7,6 +7,7 @@
         ?>
     </div>
     <div class="filter"></div>
+
 </section>
 
 <script>
