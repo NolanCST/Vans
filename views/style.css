@@ -72,9 +72,6 @@ section {
    overflow-y: auto;
    gap: 30px;
 }
-.section.active {
-   background-color: rgb(36, 36, 36);
-}
 .cardA {
    margin: 20px 0;
    height: 50%;
@@ -90,8 +87,7 @@ section {
    height: 900px;
    width: 98%;
    z-index: 4;
-   transform: translate(100px);
-   top: 16%;
+   top: 6%;
    border-radius: 20px;
 }
 .cardA.active .cla-image {
@@ -102,9 +98,7 @@ section {
 .cardA.active .cla-image img {
    width: fit-content;
 }
-body.active main {
-   background-color: black;
-}
+
 .cla-mark {
    grid-area: mark;
 }
@@ -139,7 +133,9 @@ body.active main {
    grid-area: image;
    background-color: #134e5e;
 }
-
+body.active main{
+   position: static;
+}
 .cardA.active .image {
    height: 400px;
 }
@@ -236,7 +232,7 @@ body.active main {
 /* ----> Section Footer <---- */
 footer {
    width: 100vw;
-   height: 25%;
+   height: 180px;
 }
 .aide {
    display: flex;
@@ -246,6 +242,7 @@ footer {
    color: #ecf8f6;
    align-items: baseline;
    font-size: 12px;
+   height: 180px;
 }
 
 .p_ftLogo1 {
@@ -263,4 +260,20 @@ footer {
 .iconsSocial {
    width: 2vw;
    margin: 2%;
+}
+
+.article2,
+.article3,
+.article4{
+   display: flex;
+   flex-direction: column;
+
+}
+
+.article2 a,
+.article3 a,
+.article4 a{
+   color: white;
+   text-decoration: none;
+   font-size: 15px;
 }

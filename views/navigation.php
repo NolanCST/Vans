@@ -117,23 +117,23 @@
 
                     <div class="article2">
                         <h4>À propos du site</h4>
-                        <p>Qui sommes-nous ?</p>
-                        <p>Contactez-nous</p>
-                        <p>Mentions légales</p>
-                        <p>Politique de Confidentialité</p>
+                        <a href="https://www.youtube.com/watch?v=HGsPKGFjmuM">Qui sommes-nous ?</a>
+                        <a href="https://www.youtube.com/watch?v=CiaTQ-08vSU">Contactez-nous</a>
+                        <a href="https://www.youtube.com/watch?v=mF3NWS_m_FY">Mentions légales</a>
+                        <a href="https://www.youtube.com/watch?v=P3AvEvESaAA">Politique de Confidentialité</a>
                     </div>
 
                     <div class="article3">
                         <h4>Informations enchères</h4>
-                        <p>Comment cela marche</p>
-                        <p>Questions fréquentes</p>
+                        <a href="https://www.youtube.com/watch?v=VBKGmmd7aDM">Comment cela marche</a>
+                        <a href="https://www.youtube.com/watch?v=4RROUa_S0S8">Questions fréquentes</a>
                     </div>
 
                     <div class="article4">
                         <h4>Liens rapides</h4>
-                        <p>Accueil</p>
-                        <p>Historique des enchères</p>
-                        <p>Nos enchères</p>
+                        <a href="https://www.youtube.com/watch?v=f_nByTX1cgA">Informations enchères</a>
+                        <a href="https://www.youtube.com/watch?v=nUuFKtl9ajk">Historique des enchères</a>
+                        <a href="https://www.youtube.com/watch?v=Ygnez_odlNg">Nos enchères</a>
                     </div>
                 </div>
             </footer>
