@@ -31,7 +31,10 @@
                           <a class="nav-link active" aria-current="page" href="home.php">Accueil</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="product.php">Annonces</a>
+                          <a class="nav-link" href="product.php">Vendre</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="render_product.php">Annonces</a>
                         </li>
                         
                         <li class="nav-item dropdown">
