@@ -19,7 +19,7 @@
             <p class="textPassword">*Au moins 12 caractères, un chiffre, une lettre majuscule, une minuscule et un caractère parmi !@#$%^&*_=+.</p>
         </div>
         <div class="form-group">
-            <input type="submit" value="Connexion " name="submit" class="btn btn-register btn-warning">
+            <input type="submit" value="Valider" name="submit" class="btn btn-register btn-warning">
         </div>
         <div class="form-group">
         <p class="box-register">Déjà inscrit ? <a href="login.php">Connectez-vous ici</a></p>

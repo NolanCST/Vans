@@ -10,7 +10,7 @@
             <label>Mot de passe</label>
         </div>
         <div class="form-group">
-            <input type="submit" value="Connexion " name="submit" class="btn btn-login btn-warning">
+            <input type="submit" value="Connexion" name="submit" class="btn btn-login btn-warning">
         </div>
         <div class="form-group">
             <p class="box-register">Vous êtes nouveau ici ? <a href="register.php">S'inscrire</a></p>

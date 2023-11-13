@@ -49,7 +49,7 @@ class Register {
                     Vous êtes inscrit avec succès.
                 </div>
                 <?php header("refresh: 2, url=login.php");
-        };}
-
+            };
+        }
     }
 }
