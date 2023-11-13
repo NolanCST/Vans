@@ -3,15 +3,15 @@
 
 class  Product {
 
-    public string $title;
-    public string $mark;
-    public string $model;
-    public string $power;
-    public string $year;
-    public string $description;
-    public int $starting_price;
-    public string $end_date; 
-    public int $last_price;
+    private string $title;
+    private string $mark;
+    private string $model;
+    private string $power;
+    private string $year;
+    private string $description;
+    private int $starting_price;
+    private string $end_date; 
+    private int $last_price;
 
 
     public function __construct ($title, $mark, $model, $power, $year, $description,$starting_price, $end_date)
@@ -25,6 +25,38 @@ class  Product {
     $this->starting_price=$starting_price;
     $this->end_date=$end_date;
     }
+
+    public function __get ($property) {
+        if ($property === "title") {
+            return $this->title;
+        } else if ($property === "mark") {
+            return $this->mark;
+        } else if ($property === "model") {
+            return $this->model;
+        } else if ($property === "power") {
+            return $this->power;
+        } else if ($property === "year") {
+            return $this->year;
+        } else if ($property === "description") {
+            return $this->description;
+        } else if ($property === "starting_price") {
+            return $this->starting_price;
+        } else if ($property === "end_date") {
+            return $this->end_date;
+        } else if ($property === "last_price") {
+            return $this->last_price;
+        } else {
+            return $this->$property;
+        }
+    }
+
+
+
+
+
+
+
+
 
    public function save () {
     require __DIR__."/../dataBase.php";
