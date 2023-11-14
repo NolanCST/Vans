@@ -37,6 +37,8 @@
 
 
                         } else if($x == 'image'){
+                            
+                             // La première partie est l'image codée Base64. ; La deuxième partie est la chaîne codée de l'image Base64.
                             echo "<div class='cla-$x'>".'<img src="data:image/jpeg;base64,'.base64_encode($value).'"/></div>';
                         }  else {
                             
@@ -62,11 +64,14 @@
 
                         }
                     }
-                } ?>
-                    </div>
-                    <a href="auction.php?id=<?php echo $element['id_product']?>">Voir details</a>
-                </div>
-            <?php }
+
+                }
+                echo     
+                    "</div>
+                        <a href='auction.php?id="$element['id_product']"'>Voir details</a>
+                </div>";
+            }
+
         }
     }
     $myList = new Truc();
