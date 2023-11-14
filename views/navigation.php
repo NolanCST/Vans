@@ -117,7 +117,7 @@
 
                     <div class="article2">
                         <h4>À propos du site</h4>
-                        <a href="https://www.youtube.com/watch?v=HGsPKGFjmuM">Qui sommes-nous ?</a>
+                        <a href="sous_dossier_footer/qui_sommes_nous.php">Qui sommes-nous ?</a>
                         <a href="https://www.youtube.com/watch?v=CiaTQ-08vSU">Contactez-nous</a>
                         <a href="https://www.youtube.com/watch?v=mF3NWS_m_FY">Mentions légales</a>
                         <a href="https://www.youtube.com/watch?v=P3AvEvESaAA">Politique de Confidentialité</a>
