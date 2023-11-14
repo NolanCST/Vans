@@ -1,27 +1,33 @@
-
+/* ----> Formulaire multisearch <---- */
 .form-filter {
     background-color: rgba(0,0,0, 0.5);
-    padding: 60px;
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: row;
+    gap: 3%;
+}
+
+.filter-title h1 {
+    font-size: 20px;
+    color:  #feaa07;
+    
 }
 
 .input-filter-search {
-    width: 400px;
+    width: 0px;
     padding: 10px;
     font-size: 16px;
     border: none;
     outline: none;
 }
 
-.input-filter-submit {
-    background-color: #feaa07;
-    width: 200px;
-    padding: 10px;
-    font-size: 16px;
-    border: none;
-    outline: none;
-    cursor: pointer;
-}
-
+/* ----> affichage recherche générale <---- */
 #resultats {
     width: 620px;
     font-size: 14px;
@@ -36,14 +42,4 @@
     font-size: 16px;
     border-bottom: solid 1px #888;
     padding: 10px 0;
-}
-
-.colormark{
-    color: blueviolet;
-}
-.containerCardB{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 5%;
 }
