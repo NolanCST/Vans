@@ -56,7 +56,10 @@ session_start(); ?>
             </select>
         </div>
         <div>
-            <input class="btn btn-outline-warning" type="submit" name="multisearch" value="Rechercher" />
+            <input class="btn btn-warning" type="submit" name="multisearch" value="Rechercher" />
+        </div>
+        <div>
+        <button class="btn btn-outline-warning" id="refresh" onclick="windows.location.reload(false)"> Rafraichir </button>
         </div>
     </div>        
 </form>
