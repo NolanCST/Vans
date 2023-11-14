@@ -13,15 +13,15 @@
         <h1>qui sommes nous ?</h1>
         <div class="presentation">
             <h2>Nous sommes des spartiate</h2>
-            <p>non je plaisante ;) nous sommes un groupe de personnes en reconvertion professionnelle afin de devenir des développeur web full stack </p>
-            <p>se site à été conçu par 4 personnes que voici :</p>
+            <p>Non je plaisante ;) nous sommes un groupe de personnes en reconvertion professionnelle afin de devenir des développeur web full stack </p>
+            <p>Ce site à été conçu par 4 personnes que voici :</p>
         </div>
 
     </header>
 
     <section class="section">
 
-        <div class="card mb-3 andrea" style="max-width: 80%;">
+        <div class="card mb-3 andrea">
             <div class="row g-0">
                 <div class="col-md-4">
                     <img src="../../images/a.png" class="img-fluid rounded-start" alt="...">
@@ -30,13 +30,13 @@
                 <div class="col-md-8">
                     <div class="card-body">
                         <h5 class="card-title dev">andrea</h5>
-                        <p class="card-text">la gloutonne comme vous pouvez le voir dans l'image elle est prete a manger . PS : elle a un garde manger planqué dans le meuble kallax uniquement pour elle.</p>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                         <!-- <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p> -->
                     </div>
                 </div>
             </div>
         </div>
-        <div class="card mb-3 nolan" style="max-width: 80%;">
+        <div class="card mb-3 nolan" >
             <div class="row g-0">
                 <div class="col-md-4 nolanus">
                     <img src="../../images/n.png" class="img-fluid rounded-start" alt="...">
@@ -45,13 +45,13 @@
                 <div class="col-md-8">
                     <div class="card-body">
                         <h5 class="card-title dev">nolan</h5>
-                        <p class="card-text">surnommé "nolanus" ou encore "nathan le tyran" on vous laisse imaginé pourquoi</p>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>   
                         <!-- <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p> -->
                     </div>
                 </div>
             </div>
         </div>
-        <div class="card mb-3 veronique" style="max-width: 80%;">
+        <div class="card mb-3 veronique" >
             <div class="row g-0">
                 <div class="col-md-4">
                     <img src="../../images/v.png" class="img-fluid rounded-start" alt="...">
@@ -60,13 +60,13 @@
                 <div class="col-md-8">
                     <div class="card-body">
                         <h5 class="card-title dev">veronique</h5>
-                        <p class="card-text">veronique </p>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                         <!-- <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p> -->
                     </div>
                 </div>
             </div>
         </div>
-        <div class="card mb-3 sergio" style="max-width: 80%;">
+        <div class="card mb-3 sergio" >
             <div class="row g-0">
                 <div class="col-md-4">
                     <img src="../../images/d.gif" class="img-fluid rounded-start" alt="...">
