@@ -56,64 +56,245 @@ session_start(); ?>
 
 
 if(isset($_POST['multisearch']))
-    {  
-        $where = "select * from product where ";
-        if ( !empty($_POST['marque']) ) 
-        {
-            $where = $where . 'mark like \'%' . $_POST['marque'] . '%\'';
-        }
-        if ( !empty($_POST['marque']) && !empty( $_POST['modele'] ) ) {
-            $where = $where . 'or ';
-        }
-        if ( !empty($_POST['modele']) ) 
-        {
-            $where = $where . 'model like \'%' . $_POST['modele'] . '%\'';
-        }
-      
-            $query = $dbh->prepare($where);
-        $query->execute();
+{  
+    $where = "select * from product where ";
+    if ( !empty($_POST['marque']) ) 
+    {
+        $where = $where . 'mark like \'%' . $_POST['marque'] . '%\'';
+    }
+    if ( !empty($_POST['marque']) && !empty( $_POST['modele'] ) ) {
+        $where = $where . 'or ';
+    }
+    if ( !empty($_POST['modele']) ) 
+    {
+        $where = $where . 'model like \'%' . $_POST['modele'] . '%\'';
+    }
+    
 
-        $results = $query->fetchAll();
-
-
-        foreach ($results as $result) {
-        echo "<h1> Vente N° $result[id_product]: </h1>";
-        echo "<h2> Titre : $result[title]</h2>"; 
-        echo "<p> Description : $result[description]</p>";
-        echo "<p> Prix de départ : $result[starting_price]</p>";
-        echo "<p> Date de fin : $result[end_date]</p>";
-        echo "<p> ___________________</p>";
-        }
-    }else if (@$afficher =="oui") {
-            foreach ($tabs as $tab) {
-                echo "<h1> Vente N° $tab[id_product]: </h1>";
-                echo "<h2> Titre : $tab[title]</h2>"; 
-                echo "<p> Description : $tab[description]</p>";
-                echo "<p> Prix de départ : $tab[starting_price]</p>";
-                echo "<p> Date de fin : $tab[end_date]</p>";
-                echo "<p> ___________________</p>";
-                }
-    } else {
-    $query = $dbh->prepare("SELECT * FROM product");
+    $query = $dbh->prepare($where);
     $query->execute();
-
     $results = $query->fetchAll();
 
 
-    foreach ($results as $result) {
-    echo "<h1> Vente N° $result[id_product]: </h1>";
-    echo "<h2> Titre : $result[title]</h2>"; 
-    echo "<p> Description : $result[description]</p>";
-    echo "<p> Prix de départ : $result[starting_price]</p>";
-    echo "<p> Date de fin : $result[end_date]</p>";
-    echo "<p> ___________________</p>";
+
+    echo "<div class='containerCardB'>";
+
+
+    foreach ($results as $result => $elements) {
+        echo "<div class='cardA'>
+        <div class='info'>";
+
+
+        foreach($elements as $key =>$element){
+            if ($key == "title" /* || $key == "id_product" */ ||$key == "starting_price" ||$key == "last_price" ||$key == "end_date" ||$key == "model" ||$key == "mark" ||$key == "power" ||$key == "year" ||$key == "description" ||$key == "image") {
+                 
+                if($key == "last_price" || $key == "starting_price"){
+                    if($key == "last_price"){
+                        echo "<div class='cla-$key'> Dernier prix : ". $element . " €</div>" ;
+                    } else {
+                        echo "<div class='cla-$key'> Prix inicial : ". $element . " €</div>" ;
+                    }
+                    
+                } else if ($key == "power"){
+                    echo "<div class='cla-$key'> Puissance : ". $element . " ch</div>" ;
+
+
+                } else if($key == 'image'){
+                    echo "<div class='cla-$key'>".'<img src="data:image/jpeg;base64,'.base64_encode($element).'"/></div>';
+                }  else {
+                    
+                    if ($key == 'title') {
+                        echo "<div class='cla-$key'> Titre : ". $element . " </div>" ;
+                    } else if ($key == 'mark') {
+                        echo "<div class='cla-$key'> Marque : ". $element . " </div>" ;
+                    } else if ($key == 'model') {
+                        echo "<div class='cla-$key'> Modèle : ". $element . " </div>" ;
+                    } else if ($key == 'power') {
+                        echo "<div class='cla-$key'> Puissance : ". $element . " </div>" ;
+                    } else if ($key == 'year') {
+                        echo "<div class='cla-$key'> Année : ". $element . " </div>" ;
+                    } else if ($key == 'description') {
+                        echo "<div class='cla-$key'> Description : ". $element . " </div>" ;
+                    }else if ($key == 'starting_price') {
+                        echo "<div class='cla-$key'> Prix de départ : ". $element . " </div>" ;
+                     } else if ($key == 'end_date'){
+                        echo "<div class='cla-$key'> Date de fin d'enchère : ". $element . " </div>" ;
+                    } else {
+                        echo "<div class='cla-$key'>". $key . " : ". $element . " </div>" ;
+                    }
+
+                }
+            
+            }
+        
+        }
+        echo "</div> </div>";
+
     }
+}else if (@$afficher =="oui") {
+
+    echo "<div class='containerCardB'>";
+
+    foreach ($tabs as $tab => $elements ) {
+
+        echo "<div class='cardA'>
+        <div class='info'>";
+
+
+        foreach($elements as $key =>$element){
+            if ($key == "title" /* || $key == "id_product" */ ||$key == "starting_price" ||$key == "last_price" ||$key == "end_date" ||$key == "model" ||$key == "mark" ||$key == "power" ||$key == "year" ||$key == "description" ||$key == "image") {
+                 
+                if($key == "last_price" || $key == "starting_price"){
+                    if($key == "last_price"){
+                        echo "<div class='cla-$key'> Dernier prix : ". $element . " €</div>" ;
+                    } else {
+                        echo "<div class='cla-$key'> Prix inicial : ". $element . " €</div>" ;
+                    }
+                    
+                } else if ($key == "power"){
+                    echo "<div class='cla-$key'> Puissance : ". $element . " ch</div>" ;
+
+
+                } else if($key == 'image'){
+                    echo "<div class='cla-$key'>".'<img src="data:image/jpeg;base64,'.base64_encode($element).'"/></div>';
+                }  else {
+                    
+                    if ($key == 'title') {
+                        echo "<div class='cla-$key'> Titre : ". $element . " </div>" ;
+                    } else if ($key == 'mark') {
+                        echo "<div class='cla-$key'> Marque : ". $element . " </div>" ;
+                    } else if ($key == 'model') {
+                        echo "<div class='cla-$key'> Modèle : ". $element . " </div>" ;
+                    } else if ($key == 'power') {
+                        echo "<div class='cla-$key'> Puissance : ". $element . " </div>" ;
+                    } else if ($key == 'year') {
+                        echo "<div class='cla-$key'> Année : ". $element . " </div>" ;
+                    } else if ($key == 'description') {
+                        echo "<div class='cla-$key'> Description : ". $element . " </div>" ;
+                    }else if ($key == 'starting_price') {
+                        echo "<div class='cla-$key'> Prix de départ : ". $element . " </div>" ;
+                     } else if ($key == 'end_date'){
+                        echo "<div class='cla-$key'> Date de fin d'enchère : ". $element . " </div>" ;
+                    } else {
+                        echo "<div class='cla-$key'>". $key . " : ". $element . " </div>" ;
+                    }
+
+                }
+            
+            }
+        
+        }
+        echo "</div> </div>";
+    }
+} else {
+
+
+    $query = $dbh->prepare("SELECT * FROM product");
+    $query->execute();
+    $results = $query->fetchAll();
+
+    echo "<div class='list'>";
+
+    foreach ($results as $result => $elements) {
+        echo "<div class='cardA'>
+        <div class='info'>";
+
+        foreach($elements as $key =>$element){
+            if ($key == "title" /* || $key == "id_product" */ ||$key == "starting_price" ||$key == "last_price" ||$key == "end_date" ||$key == "model" ||$key == "mark" ||$key == "power" ||$key == "year" ||$key == "description" ||$key == "image") {
+                 
+                if($key == "last_price" || $key == "starting_price"){
+                    if($key == "last_price"){
+                        echo "<div class='cla-$key'> Dernier prix : ". $element . " €</div>" ;
+                    } else {
+                        echo "<div class='cla-$key'> Prix inicial : ". $element . " €</div>" ;
+                    }
+                    
+                } else if ($key == "power"){
+                    echo "<div class='cla-$key'> Puissance : ". $element . " ch</div>" ;
+
+
+                } else if($key == 'image'){
+                    echo "<div class='cla-$key'>".'<img src="data:image/jpeg;base64,'.base64_encode($element).'"/></div>';
+                }  else {
+                    
+                    if ($key == 'title') {
+                        echo "<div class='cla-$key'> Titre : ". $element . " </div>" ;
+                    } else if ($key == 'mark') {
+                        echo "<div class='cla-$key'> Marque : ". $element . " </div>" ;
+                    } else if ($key == 'model') {
+                        echo "<div class='cla-$key'> Modèle : ". $element . " </div>" ;
+                    } else if ($key == 'power') {
+                        echo "<div class='cla-$key'> Puissance : ". $element . " </div>" ;
+                    } else if ($key == 'year') {
+                        echo "<div class='cla-$key'> Année : ". $element . " </div>" ;
+                    } else if ($key == 'description') {
+                        echo "<div class='cla-$key'> Description : ". $element . " </div>" ;
+                    }else if ($key == 'starting_price') {
+                        echo "<div class='cla-$key'> Prix de départ : ". $element . " </div>" ;
+                     } else if ($key == 'end_date'){
+                        echo "<div class='cla-$key'> Date de fin d'enchère : ". $element . " </div>" ;
+                    } else {
+                        echo "<div class='cla-$key'>". $key . " : ". $element . " </div>" ;
+                    }
+
+                }
+            
+            }
+        
+        }
+        echo "
+            </div> 
+                <div class='formNewPrice'>
+                    <form action='' method='post'>
+                        <input type='number' name='new_valeur' id='new_valeur' placeholder='votre prix'>
+                        <button type='submit'>valider</button>
+                    </form>
+                </div>
+            </div>";
+    }
+    echo"</div>";
+
 }
 
 
 // requête générale de la database
 ?>
 
+
+<script>
+    let r = false;
+
+    let doc = document.querySelectorAll(".cardA .image, .cardA .info");
+
+    doc.forEach(box => {
+        box.addEventListener("click", function(e) {
+
+            let trouver = document.querySelector(".cardA.active");
+
+            console.log("hello", box.parentElement);
+            console.log("hello", e.target.parentElement.id);
+
+            if (r == true || r == null) {
+                box.parentElement.classList.remove("active");
+                document.querySelector(".list").classList.remove("active");
+                document.querySelector("body").classList.remove("active");
+                r = false;
+            } else if (r == false) {
+                box.parentElement.classList.add("active");
+                document.querySelector(".list").classList.add("active");
+                document.querySelector("body").classList.add("active");
+                r = true;
+            }
+        });
+    })
+
+
+    let trouver = document.querySelector(".cardA");
+
+    trouver.addEventListener(DOMContentLoaded, (event) => {
+        alert('coucou');
+    })
+</script>
 <!-- <div class="annonceContainer">
     <div class="annonce-search">
         <div class="card" style="width: 18rem;">
