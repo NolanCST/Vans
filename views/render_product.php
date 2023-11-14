@@ -237,17 +237,16 @@ if(isset($_POST['multisearch']))
                       }
                   }
               }
-          }
-          echo "
-              </div> 
-                  <div class='formNewPrice'>
-                      <form action='' method='post'>
-                          <input type='number' name='new_valeur' id='new_valeur' placeholder='votre prix'>
-                          <button type='submit'>valider</button>
-                      </form>
-                  </div>
-              </div>";
-      }
+          } ?>
+          </div>
+          <?php 
+          if(isset($_SESSION["email"])){ ?>
+              <div class='lienAchat'>
+                  <a href='auction.php?id=<?php echo $elements['id_product'] ?>'>Encherir</a>
+              </div>
+          <?php } ?>
+      </div>
+      <?php }
       echo"</div>";
 
 }

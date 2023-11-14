@@ -67,15 +67,16 @@
                         }
                     }
 
-                }
-                echo     
-                    "</div>
-                        <div class='lienAchat'>
-                            <a href='auction.php?id=" . $element['id_product'] . "'>Voir details</a>
-                        </div>
-                    </div>";
-            }
-
+                } ?>
+                </div>
+                <?php 
+                if(isset($_SESSION["email"])){ ?>
+                    <div class='lienAchat'>
+                        <a href='auction.php?id=<?php echo $element['id_product'] ?>'>Encherir</a>
+                    </div>
+                <?php } ?>
+            </div>
+            <?php }
         }
     }
     $myList = new Truc();
