@@ -68,7 +68,7 @@
                 }
                 echo     
                     "</div>
-                        <a href='auction.php?id="$element['id_product']"'>Voir details</a>
+                        <a href='auction.php?id=". $element['id_product'] . "'>Voir details</a>
                 </div>";
             }
 
