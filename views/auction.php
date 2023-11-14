@@ -7,15 +7,15 @@ if(!isset($_SESSION["email"])){
 }
 
 class Auction {
-    private int $montant;
+    private int $amount;
 
-    public function __construct ($montant) {
-        $this->montant = $montant;
+    public function __construct ($amount) {
+        $this->amount = $amount;
     }
 
     public function __get ($property) {
-        if ($property === "montant") {
-            return $this->montant;
+        if ($property === "amount") {
+            return $this->amount;
         } else {
             return $this->$property;
         }
@@ -27,7 +27,7 @@ class Auction {
         $startingPriceRecup->execute();
         $startingPrice = $startingPriceRecup->fetchColumn();
 
-        if ($this->montant < $startingPrice) {
+        if ($this->amount < $startingPrice) {
             ?>
             <div class="alert alert-danger" role="alert">
                 Vous ne pouvez pas enchérir en dessous du prix de départ.
@@ -40,10 +40,10 @@ class Auction {
         $lastPriceRecup->execute();
         $lastPrice = $lastPriceRecup->fetchColumn();
 
-        if ($lastPrice !== false && $this->montant <= $lastPrice) {
+        if ($lastPrice !== false && $this->amount <= $lastPrice) {
             ?>
             <div class="alert alert-danger" role="alert">
-                Vous devez miser un montant superieur à la mise précédente.
+                Vous devez miser un amount superieur à la mise précédente.
             </div>
             <?php
             return;
@@ -51,7 +51,7 @@ class Auction {
 
 
         $query = $dbh->prepare("UPDATE `product` SET last_price=:last_Price WHERE id_product='" . $_GET['id'] . "'");
-        $query->bindValue(':last_Price', $this->montant, PDO::PARAM_STR);
+        $query->bindValue(':last_Price', $this->amount, PDO::PARAM_STR);
         $results = $query->execute();
         $this->save();
     }
@@ -71,7 +71,7 @@ class Auction {
         $products = $dbproduct->fetch();
 
         $query = $dbh->prepare("INSERT INTO `auction` (new_auction, date_auction, id_user, id_product) VALUES (:new_auction, NOW(), :id_user, :id_product)");
-        $query->bindValue(':new_auction', $this->montant, PDO::PARAM_STR);
+        $query->bindValue(':new_auction', $this->amount, PDO::PARAM_STR);
         $query->bindValue(':id_user', $users['id_user'], PDO::PARAM_STR);
         $query->bindValue(':id_product', $products['id_product'], PDO::PARAM_STR);
         $results = $query->execute();
@@ -86,7 +86,7 @@ class Auction {
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $myAuction = new Auction ($_POST["montant"]);
+    $myAuction = new Auction ($_POST["amount"]);
     $myAuction->verification();
 }
 
@@ -98,27 +98,43 @@ echo "<div class=\"enchereContainer\">";
     $query->execute();
     $results = $query->fetchAll();
     foreach($results as $result) { ?>
-        <div class="infosProduitEnchere">
-            <p>Titre: <?php echo $result['title']?></p>
-            <p>Prix de depart: <?php echo $result['starting_price']?></p>
-            <p>Dernier prix: <?php echo $result['last_price']?></p>
-            <p>Date de fin: <?php echo $result['end_date']?></p>
-            <p>Marque: <?php echo $result['mark']?></p>
-            <p>Modele: <?php echo $result['model']?></p>
-            <p>Puissance: <?php echo $result['power']?></p>
-            <p>Annee: <?php echo $result['year']?></p>
-            <p>Description: <?php echo $result['description']?></p>
+    <div class="detailProductAuction">
+        <h1 class="auctionTitle">Titre: <?php echo $result['title']?></h1>
+        <div class="detailImages">
+            <img src="" class="firstImage" />
+            <div class="placementImages">
+                <img src="" class="secondaryImage" />
+                <img src="" class="secondaryImage" />
+            </div>
         </div>
+        <div class="infoProductAuction">
+            <div class="part1">
+                <p>Marque: <?php echo $result['mark']?></p>
+                <p>Annee: <?php echo $result['year']?></p>
+            </div>
+            <div class="Part2">
+                <p>Modele: <?php echo $result['model']?></p>
+                <p>Puissance: <?php echo $result['power']?></p>
+            </div>
+        </div>
+        <p class="descriptionAuction">Description: <?php echo $result['description']?></p>
+    </div>
+    <div class="auctionPart">
+        <p class="endDateAuction">Date de fin: <?php echo $result['end_date']?></p>
+        <p class="startPriceAuction">Prix de depart: <?php echo $result['starting_price']?>€</p>
+        <p class="lastPriceAuction">Dernier prix: <?php echo $result['last_price']?>€</p>
     <?php } ?>
 
     <!-- FORMULAIRE POUR ENCHERIR -->
 
-    <div class='formNewPrice'>
-        <form action='' method='post'>
-            <input type='number' name='montant' id='new_valeur' placeholder='votre prix'>
-            <button type='submit'>Encherir</button>
-        </form>
-    </div>
+    <form class='formAuction' action='' method='post'>
+        <div class="form-floating">
+            <input type="number" class="form-control transparent-input auctionInput" name="amount" placeholder="amount de l'enchere"  required>
+            <label>amount de l'enchère</label>
+        </div>
+        <input type="submit" value="Encherir" name="submit" class="btn btnAuction btn-warning">
+    </form>
+
 
     <?php
 
@@ -127,12 +143,12 @@ echo "<div class=\"enchereContainer\">";
     $historyAuction = $dbh->prepare("SELECT a.new_auction, a.date_auction, u.firstname FROM `auction` a LEFT JOIN `user` u ON u.id_user=a.id_user LEFT JOIN `product` p ON p.id_product=a.id_product WHERE p.id_product='".$_GET['id']."'");
     $historyAuction->execute();
     $results = $historyAuction->fetchAll();
-    echo "<h3>Enchere precedente:</h3>";
-    foreach($results as $result) { ?>
-        <div class="historiqueEnchere">
-            <p><?php echo $result['new_auction']?>€, le <?php echo $result['date_auction']?> par <?php echo $result['firstname']?>.</p>
-        </div>
+    echo "<h3 class=\"historyTitle\">Enchere precedente:</h3>";
+    $reversedResults = array_reverse($results);
+    foreach($reversedResults as $result) { ?>
+        <p class="historyAuction"><?php echo $result['new_auction']?>€, le <?php echo $result['date_auction']?> par <?php echo $result['firstname']?>.</p>
     <?php }
+ echo  "</div>";
 echo "</div>";
 $content = ob_get_clean();
 require_once("navigation.php");

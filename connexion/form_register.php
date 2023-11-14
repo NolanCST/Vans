@@ -6,7 +6,7 @@
             <label>Nom</label>
         </div>
         <div class="form-floating mb-3">
-            <input type="tex" class="form-control transparent-input connexionInput" name="firstname" placeholder="Firstname" required>
+            <input type="text" class="form-control transparent-input connexionInput" name="firstname" placeholder="Firstname" required>
             <label>Prenom</label>
         </div>
         <div class="form-floating mb-3">
