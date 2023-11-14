@@ -1,4 +1,4 @@
-<?php
+<?php ob_start();
 session_start();
 
 if(!isset($_SESSION["email"])){
@@ -91,41 +91,48 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 // AFFICHAGE DES DETAILS DU PRODUIT
+echo "<div class=\"enchereContainer\">";
+    require __DIR__."/../dataBase.php";
 
-require __DIR__."/../dataBase.php";
+    $query = $dbh->prepare("SELECT * FROM `product` WHERE id_product='".$_GET['id']."'");
+    $query->execute();
+    $results = $query->fetchAll();
+    foreach($results as $result) { ?>
+        <div class="infosProduitEnchere">
+            <p>Titre: <?php echo $result['title']?></p>
+            <p>Prix de depart: <?php echo $result['starting_price']?></p>
+            <p>Dernier prix: <?php echo $result['last_price']?></p>
+            <p>Date de fin: <?php echo $result['end_date']?></p>
+            <p>Marque: <?php echo $result['mark']?></p>
+            <p>Modele: <?php echo $result['model']?></p>
+            <p>Puissance: <?php echo $result['power']?></p>
+            <p>Annee: <?php echo $result['year']?></p>
+            <p>Description: <?php echo $result['description']?></p>
+        </div>
+    <?php } ?>
 
-$query = $dbh->prepare("SELECT * FROM `product` WHERE id_product='".$_GET['id']."'");
-$query->execute();
-$results = $query->fetchAll();
-foreach($results as $result) { ?>
-    <p>Titre: <?php echo $result['title']?></p>
-    <p>Prix de depart: <?php echo $result['starting_price']?></p>
-    <p>Dernier prix: <?php echo $result['last_price']?></p>
-    <p>Date de fin: <?php echo $result['end_date']?></p>
-    <p>Marque: <?php echo $result['mark']?></p>
-    <p>Modele: <?php echo $result['model']?></p>
-    <p>Puissance: <?php echo $result['power']?></p>
-    <p>Annee: <?php echo $result['year']?></p>
-    <p>Description: <?php echo $result['description']?></p>
-<?php } ?>
+    <!-- FORMULAIRE POUR ENCHERIR -->
 
- <!-- FORMULAIRE POUR ENCHERIR -->
+    <div class='formNewPrice'>
+        <form action='' method='post'>
+            <input type='number' name='montant' id='new_valeur' placeholder='votre prix'>
+            <button type='submit'>Encherir</button>
+        </form>
+    </div>
 
-<section class='formNewPrice'>
-<form action='' method='post'>
-    <input type='number' name='montant' id='new_valeur' placeholder='votre prix'>
-    <button type='submit'>Encherir</button>
-</form>
-</section>
+    <?php
 
-<?php
+    // AFFICHAGE DE L'HISTORIQUE
 
-// AFFICHAGE DE L'HISTORIQUE
-
-$historyAuction = $dbh->prepare("SELECT a.new_auction, a.date_auction, u.firstname FROM `auction` a LEFT JOIN `user` u ON u.id_user=a.id_user LEFT JOIN `product` p ON p.id_product=a.id_product WHERE p.id_product='".$_GET['id']."'");
-$historyAuction->execute();
-$results = $historyAuction->fetchAll();
-echo "<h3>Enchere precedente:</h3>";
-foreach($results as $result) { ?>
-    <p><?php echo $result['new_auction']?>€, le <?php echo $result['date_auction']?> par <?php echo $result['firstname']?>.</p>
-<?php } ?>
+    $historyAuction = $dbh->prepare("SELECT a.new_auction, a.date_auction, u.firstname FROM `auction` a LEFT JOIN `user` u ON u.id_user=a.id_user LEFT JOIN `product` p ON p.id_product=a.id_product WHERE p.id_product='".$_GET['id']."'");
+    $historyAuction->execute();
+    $results = $historyAuction->fetchAll();
+    echo "<h3>Enchere precedente:</h3>";
+    foreach($results as $result) { ?>
+        <div class="historiqueEnchere">
+            <p><?php echo $result['new_auction']?>€, le <?php echo $result['date_auction']?> par <?php echo $result['firstname']?>.</p>
+        </div>
+    <?php }
+echo "</div>";
+$content = ob_get_clean();
+require_once("navigation.php");
