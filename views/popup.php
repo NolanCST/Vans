@@ -18,12 +18,10 @@
         }
 
         public function card($tab){
-            foreach($tab as $key => $element){
-                
-                echo "
+            foreach($tab as $key => $element){ ?>
                 <div class='cardA' id='card-$key'> 
-                    <div class='info'>";
-
+                    <div class='info'>
+                <?php
                 foreach($element as $x => $value){
 
                     if ($x == "title" || $x == "id_product" ||$x == "starting_price" ||$x == "last_price" ||$x == "end_date" ||$x == "model" ||$x == "mark" ||$x == "power" ||$x == "year" ||$x == "description" ||$x == "image") {
@@ -32,7 +30,7 @@
                             if($x == "last_price"){
                                 echo "<div class='cla-$x'> Dernier prix : ". $value . " €</div>" ;
                             } else {
-                                echo "<div class='cla-$x'> Prix inicial : ". $value . " €</div>" ;
+                                echo "<div class='cla-$x'> Prix initial : ". $value . " €</div>" ;
                             }
                             
                         } else if ($x == "power"){
@@ -65,17 +63,11 @@
 
                         }
                     }
-                }
-                echo     
-                    "</div>
-                    <div class='formNewPrice'>
-                        <form action='' method='post'>
-                            <input type='number' name='new_valeur' id='new_valeur' placeholder='votre prix'>
-                            <button type='submit'>valider</button>
-                        </form>
+                } ?>
                     </div>
-                </div>";
-            }
+                    <?php require __DIR__."/auction.php" ?>
+                </div>
+            <?php }
         }
     }
     $myList = new Truc();
