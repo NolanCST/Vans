@@ -18,10 +18,12 @@
         }
 
         public function card($tab){
-            foreach($tab as $key => $element){ ?>
+            foreach($tab as $key => $element){
+                
+                echo "
                 <div class='cardA' id='card-$key'> 
-                    <div class='info'>
-                <?php
+                    <div class='info'>";
+
                 foreach($element as $x => $value){
                     if ($x == "title" || $x == "id_product" ||$x == "starting_price" ||$x == "last_price" ||$x == "end_date" ||$x == "model" ||$x == "mark" ||$x == "power" ||$x == "year" ||$x == "description" ||$x == "image") {
                         
@@ -37,7 +39,7 @@
 
 
                         } else if($x == 'image'){
-                            
+
                              // La première partie est l'image codée Base64. ; La deuxième partie est la chaîne codée de l'image Base64.
                             echo "<div class='cla-$x'>".'<img src="data:image/jpeg;base64,'.base64_encode($value).'"/></div>';
                         }  else {
@@ -68,8 +70,10 @@
                 }
                 echo     
                     "</div>
-                        <a href='auction.php?id=". $element['id_product'] . "'>Voir details</a>
-                </div>";
+                        <div class='lienAchat'>
+                            <a href='auction.php?id=" . $element['id_product'] . "'>Voir details</a>
+                        </div>
+                    </div>";
             }
 
         }
