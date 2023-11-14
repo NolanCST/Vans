@@ -23,7 +23,6 @@
                     <div class='info'>
                 <?php
                 foreach($element as $x => $value){
-
                     if ($x == "title" || $x == "id_product" ||$x == "starting_price" ||$x == "last_price" ||$x == "end_date" ||$x == "model" ||$x == "mark" ||$x == "power" ||$x == "year" ||$x == "description" ||$x == "image") {
                         
                         if($x == "last_price" || $x == "starting_price"){
@@ -65,7 +64,7 @@
                     }
                 } ?>
                     </div>
-                    <?php require __DIR__."/auction.php" ?>
+                    <a href="auction.php?id=<?php echo $element['id_product']?>">Voir details</a>
                 </div>
             <?php }
         }
