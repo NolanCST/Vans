@@ -18,7 +18,6 @@ body.active {
 }
 
 main {
-   position: relative;
    width: 100vw;
    height: 100vh;
    padding-top: 70px;
@@ -34,14 +33,11 @@ p {
 /* Vitrine*/
 .hero {
    height: 50vh;
-   width: 100vw;
+   width: 100%;
    background-image: url("../images/sortie-de-grange-vente-encheres-collection-barning-palmen-1_4.jpg");
    background-repeat: no-repeat;
    background-position: bottom;
    background-size: cover;
-   position: relative;
-   left: 0;
-   right: 0;
 }
 
 .p_ftLogo2 {
@@ -108,7 +104,6 @@ section {
    overflow: hidden;
 }
 .cardA.active {
-   position: absolute;
    height: 900px;
    width: 98%;
    z-index: 4;
@@ -158,9 +153,9 @@ section {
    grid-area: image;
    background-color: #134e5e;
 }
-body.active main {
+/* body.active main {
    position: static;
-}
+} */
 .cardA.active .image {
    height: 400px;
 }

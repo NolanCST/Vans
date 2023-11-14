@@ -155,7 +155,6 @@ if(isset($_POST['multisearch']))
 }else if (@$afficher =="oui") {
     // affiche la demande lié au search nav
       echo "<div class='list b'>";
-    var_dump($tabs);
       foreach ($tabs as $tab => $elements ) {
 
           echo "<div class='cardA'>
