@@ -40,6 +40,8 @@
 
 
                         } else if($x == 'image'){
+                            
+                             // La première partie est l'image codée Base64. ; La deuxième partie est la chaîne codée de l'image Base64.
                             echo "<div class='cla-$x'>".'<img src="data:image/jpeg;base64,'.base64_encode($value).'"/></div>';
                         }  else {
                             
@@ -68,12 +70,7 @@
                 }
                 echo     
                     "</div>
-                    <div class='formNewPrice'>
-                        <form action='' method='post'>
-                            <input type='number' name='new_valeur' id='new_valeur' placeholder='votre prix'>
-                            <button type='submit'>valider</button>
-                        </form>
-                    </div>
+                        <a>lien nolan </a>
                 </div>";
             }
         }
