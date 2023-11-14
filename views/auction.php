@@ -15,13 +15,12 @@ class Auction {
             return $this->$property;
         }
     }
-
     public function verification() {
         require __DIR__ . "/../dataBase.php";
-   //recuperation du prix de départ
-        $dbstartingPrice = $dbh->prepare("SELECT starting_price FROM `product` WHERE id_product='" . $_GET['id'] . "'");
-        $dbstartingPrice->execute();
-        $startingPrice = $dbstartingPrice->fetchColumn();
+       //recuperation du prix de base
+        $startingPriceRecup = $dbh->prepare("SELECT starting_price FROM `product` WHERE id_product='" . $_GET['id'] . "'");
+        $startingPriceRecup->execute();
+        $startingPrice = $startingPriceRecup->fetchColumn();
 
         if ($this->montant < $startingPrice) {
             ?>
@@ -31,10 +30,10 @@ class Auction {
             <?php
             return;
         }
-   //recuperation du dernier prix
-        $dblastPrice = $dbh->prepare("SELECT new_auction FROM `auction` WHERE id_product='" . $_GET['id'] . "' ORDER BY date_auction DESC LIMIT 1");
-        $dblastPrice->execute();
-        $lastPrice = $dblastPrice->fetchColumn();
+       //recuperation du dernier prix
+        $lastPriceRecup = $dbh->prepare("SELECT new_auction FROM `auction` WHERE id_product='" . $_GET['id'] . "' ORDER BY date_auction DESC LIMIT 1");
+        $lastPriceRecup->execute();
+        $lastPrice = $lastPriceRecup->fetchColumn();
 
         if ($lastPrice !== false && $this->montant <= $lastPrice) {
             ?>
