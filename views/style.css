@@ -25,8 +25,10 @@ main {
    overflow: auto;
 }
 
-h1, h2, p {
-   color : white
+h1,
+h2,
+p {
+   color: white;
 }
 
 /* -------------> Navbar <---------------*/
@@ -61,7 +63,7 @@ section {
 }
 
 .deconnexionBtn {
-   background-color: #722F01 !important;
+   background-color: #722f01 !important;
 }
 
 /* -----------------------> Page Index <-------------------------- */
@@ -137,7 +139,7 @@ section {
    grid-area: image;
    background-color: #134e5e;
 }
-body.active main{
+body.active main {
    position: static;
 }
 .cardA.active .image {
@@ -216,7 +218,7 @@ body.active main{
    align-items: center;
 }
 
-.lienAchat a {
+.lienAchat .btnAuction {
    width: 120px;
    height: 40px;
    border-radius: 5px;
@@ -227,6 +229,13 @@ body.active main{
    display: flex;
    align-items: center;
    justify-content: center;
+}
+
+.infoEncherePopup {
+   color: black;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
 
 /* ----> Section Footer <---- */
@@ -265,15 +274,14 @@ footer {
 
 .article2,
 .article3,
-.article4{
+.article4 {
    display: flex;
    flex-direction: column;
-
 }
 
 .article2 a,
 .article3 a,
-.article4 a{
+.article4 a {
    color: white;
    text-decoration: none;
    font-size: 15px;

@@ -242,9 +242,13 @@ if(isset($_POST['multisearch']))
           <?php 
           if(isset($_SESSION["email"])){ ?>
               <div class='lienAchat'>
-                  <a href='auction.php?id=<?php echo $elements['id_product'] ?>'>Encherir</a>
+                  <a class="btnAuction" href='auction.php?id=<?php echo $elements['id_product'] ?>'>Encherir</a>
               </div>
-          <?php } ?>
+          <?php } else { ?>
+                <div class='lienAchat'>
+                    <p class="infoEncherePopup">Pour pouvoir encherir, merci de vous connecter. <a href="login.php">Se connecter</a></p>
+                </div>
+            <?php } ?>
       </div>
       <?php }
       echo"</div>";
