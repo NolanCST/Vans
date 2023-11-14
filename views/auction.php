@@ -16,13 +16,42 @@ class Auction {
         }
     }
 
-    public function verification () {
-        require __DIR__."/../dataBase.php";
-        $query = $dbh->prepare("UPDATE `product` SET last_price=:last_Price WHERE id_product='".$_GET['id']."'");
+    public function verification() {
+        require __DIR__ . "/../dataBase.php";
+   //recuperation du prix de départ
+        $dbstartingPrice = $dbh->prepare("SELECT starting_price FROM `product` WHERE id_product='" . $_GET['id'] . "'");
+        $dbstartingPrice->execute();
+        $startingPrice = $dbstartingPrice->fetchColumn();
+
+        if ($this->montant < $startingPrice) {
+            ?>
+            <div class="alert alert-danger" role="alert">
+                Vous ne pouvez pas enchérir en dessous du prix de départ.
+            </div>
+            <?php
+            return;
+        }
+   //recuperation du dernier prix
+        $dblastPrice = $dbh->prepare("SELECT new_auction FROM `auction` WHERE id_product='" . $_GET['id'] . "' ORDER BY date_auction DESC LIMIT 1");
+        $dblastPrice->execute();
+        $lastPrice = $dblastPrice->fetchColumn();
+
+        if ($lastPrice !== false && $this->montant <= $lastPrice) {
+            ?>
+            <div class="alert alert-danger" role="alert">
+                Vous devez miser un montant superieur à la mise précédente.
+            </div>
+            <?php
+            return;
+        }
+
+
+        $query = $dbh->prepare("UPDATE `product` SET last_price=:last_Price WHERE id_product='" . $_GET['id'] . "'");
         $query->bindValue(':last_Price', $this->montant, PDO::PARAM_STR);
         $results = $query->execute();
         $this->save();
     }
+
 
     public function save () {
         $id = $_SESSION['id'];
