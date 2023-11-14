@@ -83,6 +83,7 @@ if(isset($_POST['multisearch']))
     $query = $dbh->prepare($where);
     $query->execute();
     $results = $query->fetchAll();
+
     echo "<div class='containerCardB'>";
   
     foreach ($results as $result => $elements)
@@ -280,12 +281,6 @@ if(isset($_POST['multisearch']))
         });
     })
 
-
-    let trouver = document.querySelector(".cardA");
-
-    trouver.addEventListener(DOMContentLoaded, (event) => {
-        alert('coucou');
-    })
 </script>
 
 <?php
