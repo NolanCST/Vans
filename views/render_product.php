@@ -95,7 +95,7 @@ if(isset($_POST['multisearch']))
 
     // affiche la demande lié au multisearch
     include "popup.php";
-    $myList = new Truc();
+    $myList = new Popup();
     $myList -> card($results);
 
     
@@ -103,7 +103,7 @@ if(isset($_POST['multisearch']))
 
     // affiche la demande lié au search nav
     include "popup.php";
-    $myList = new Truc();
+    $myList = new Popup();
     $myList -> card($tabs);
 
   } else {
