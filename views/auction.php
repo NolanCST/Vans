@@ -22,6 +22,7 @@ class Auction {
     }
 
 
+
     public function endDateF(){
         require __DIR__ . "/../dataBase.php";
         $dateActuelle = date("Y-m-d");
@@ -35,6 +36,7 @@ class Auction {
        $lastUserRecup->execute();
        $lastUser = $lastUserRecup->fetchColumn();
         
+        var_dump($dateActuelle);
 
         if ($endDate <= $dateActuelle ) {
             
@@ -47,6 +49,7 @@ class Auction {
         $this->save();
         }
     }
+
 
     public function verification() {
         require __DIR__ . "/../dataBase.php";

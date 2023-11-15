@@ -18,6 +18,8 @@
         }
 
         public function card($tab){
+
+            echo "<div class='list'>";
             foreach($tab as $key => $element){
                 
                 echo "
@@ -81,10 +83,11 @@
                 <?php } ?>
             </div>
             <?php }
+
+            echo "</div>";
         }
     }
-    $myList = new Truc();
-    $myList -> connexion();
+
 
 
 ?>
