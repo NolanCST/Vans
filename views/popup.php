@@ -9,7 +9,7 @@
         public function connexion(){
             require __DIR__ ."/../database.php";
 
-            $query = $dbh->prepare("SELECT * FROM ( SELECT * FROM `product` ORDER BY `id_product` DESC LIMIT 10 ) sub ORDER BY `id_product` ASC;");
+            $query = $dbh->prepare("SELECT * FROM `product` ORDER BY `id_product` DESC LIMIT 10");
 
             $query -> execute();
 

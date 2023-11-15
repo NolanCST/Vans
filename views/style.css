@@ -14,10 +14,10 @@ body {
    justify-content: space-between;
 }
 
-body .active {
+/* body.active {
    height: 100vh;
    overflow: hidden;
-}
+} */
 
 main {
    min-width: 100vw;
