@@ -3,13 +3,14 @@
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link rel="stylesheet" type="text/css" href="product.css" />
-            <link rel="stylesheet" type="text/css" href="connexion.css" />
-            <link rel="stylesheet" type="text/css" href="render_product.css" />
-            <link rel="stylesheet" type="text/css" href="style.css" />
-            <link rel="stylesheet" type="text/css" href="details_product.css" />
-            <link rel="stylesheet" type="text/css" href="profil.css" />
             <link rel="stylesheet" type="text/css" href="auction.css" />
+            <link rel="stylesheet" type="text/css" href="connexion.css" />
+            <link rel="stylesheet" type="text/css" href="home.css" />
+            <link rel="stylesheet" type="text/css" href="navigation.css" />
+            <link rel="stylesheet" type="text/css" href="product.css" />
+            <link rel="stylesheet" type="text/css" href="profil.css" />
+            <link rel="stylesheet" type="text/css" href="render_product.css" />
+            <link rel="stylesheet" type="text/css" href="details_product.css" />
             <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
             <link href="https://fonts.googleapis.com/css2?family=Ms+Madi&family=Raleway:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300&display=swap" rel="stylesheet">
@@ -23,7 +24,6 @@
             <header class="header">
                 <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top p_bgGreen" data-bs-theme="dark">
                   <div class="container-fluid">
-                    <!-- <a class="navbar-brand p_ftLogo" href="home.php">Vans</a> -->
                     <a class="navbar-brand p_ftLogo" href="home.php">Vans</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                       <span class="navbar-toggler-icon"></span>
