@@ -17,52 +17,56 @@ session_start(); ?>
 ?>
 
 <!-- Formulaire input pour la recherche rapide -->
-
-<form class="form-filter" name="fo" method="post" action="">
-    <div class="filter-title">
-        <h1> Recherche rapide</h1>
-    </div>
-    <div class="filter-group">
-        <div class="input-group mb-3 input-multi-search">
-            <label class="input-group-text" for="inputGroupSelect01">Marque</label>
-            <select class="form-select" id="inputGroupSelect01" name="marque">
-                <option selected>... Choisir votre marque ...</option>
-                    <?php 
-                        $res=$dbh->prepare("SELECT DISTINCT mark FROM product");
-                        $res->setFetchMode(PDO::FETCH_ASSOC);
-                        $res->execute();
-                        $marque=$res->fetchAll();
-
-                        for($i=0; $i <count($marque);$i++) { ?>  
-                            <option><?php echo $marque[$i]["mark"] ?></option>
-                            <?php }
-                    ?>
-            </select>
+<div class="filter-main">
+    <form class="form-filter" name="fo" method="post" action="">
+        <div class="filter-title">
+            <h1> Recherche rapide</h1>
         </div>
-        <div class="input-group mb-3 input-multi-search">
-            <label class="input-group-text" for="inputGroupSelect02">Modèle</label>
-            <select class="form-select" id="inputGroupSelect01" name="modele"  >
-                <option >-- Choisir le modèle de la voiture --</option>
-                    <?php 
-                        $res=$dbh->prepare("SELECT DISTINCT model FROM product");
-                        $res->setFetchMode(PDO::FETCH_ASSOC);
-                        $res->execute();
-                        $modele=$res->fetchAll();
+        <div class="filter-group">
+            <div class="input-group mb-3 input-multi-search">
+                <label class="input-group-text" for="inputGroupSelect01">Marque</label>
+                <select class="form-select" id="inputGroupSelect01" name="marque">
+                    <option selected>... Choisir votre marque ...</option>
+                        <?php 
+                            $res=$dbh->prepare("SELECT DISTINCT mark FROM product");
+                            $res->setFetchMode(PDO::FETCH_ASSOC);
+                            $res->execute();
+                            $marque=$res->fetchAll();
 
-                        for($i=0; $i <count($modele);$i++) { ?>  
-                            <option><?php echo $modele[$i]["model"] ?></option>
-                            <?php }
-                    ?>
-            </select>
-        </div>
-        <div>
-            <input class="btn btn-warning" type="submit" name="multisearch" value="Rechercher" />
-        </div>
-    </div>        
+                            for($i=0; $i <count($marque);$i++) { ?>  
+                                <option><?php echo $marque[$i]["mark"] ?></option>
+                                <?php }
+                        ?>
+                </select>
+            </div>
+            <div class="input-group mb-3 input-multi-search">
+                <label class="input-group-text" for="inputGroupSelect02">Modèle</label>
+                <select class="form-select" id="inputGroupSelect01" name="modele"  >
+                    <option >-- Choisir le modèle de la voiture --</option>
+                        <?php 
+                            $res=$dbh->prepare("SELECT DISTINCT model FROM product");
+                            $res->setFetchMode(PDO::FETCH_ASSOC);
+                            $res->execute();
+                            $modele=$res->fetchAll();
+
+                            for($i=0; $i <count($modele);$i++) { ?>  
+                                <option><?php echo $modele[$i]["model"] ?></option>
+                                <?php }
+                        ?>
+                </select>
+            </div>
+            <div>
+                <input class="btn btn-warning" type="submit" name="multisearch" value="Rechercher" />
+            </div>
+        </div>        
     </form>
-    <a href="render_product.php">
-        <button class="btn btn-outline-warning" id="refresh"> Rafraichir </button>
-    </a>
+    <div class="button-refresh">
+        <a href="render_product.php">
+            <button class="btn btn-outline-warning btn-refresh" id="refresh"> Rafraichir </button>
+        </a>
+    </div>
+</div>
+
 
 
 <?php
