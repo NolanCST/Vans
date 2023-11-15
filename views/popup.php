@@ -4,9 +4,9 @@
     ini_set("display_errors", 1);
 
 
-    class Truc {
+    class Popup {
 
-        public function connexion(){
+        public function renderProduct(){
             require __DIR__ ."/../database.php";
 
             $query = $dbh->prepare("SELECT * FROM `product` ORDER BY `id_product` DESC LIMIT 10");

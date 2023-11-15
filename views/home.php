@@ -14,8 +14,8 @@ session_start(); ?>
     <section>
             <?php
                 require __DIR__ . "/popup.php";
-                $myList = new Truc();
-                $myList -> connexion();
+                $myList = new Popup();
+                $myList -> renderProduct();
 
             ?>
     </section>

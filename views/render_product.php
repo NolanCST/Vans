@@ -107,15 +107,10 @@ if(isset($_POST['multisearch']))
     $myList -> card($tabs);
 
   } else {
-      
-    $query = $dbh->prepare("SELECT * FROM product");
-    $query->execute();
-    $results = $query->fetchAll();
-
     // requête et affichage générale de la database
     include "popup.php";
-    $myList = new Truc();
-    $myList -> card($results);
+    $myList = new Popup();
+    $myList -> renderProduct();
 }
 
 
