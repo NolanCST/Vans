@@ -21,30 +21,31 @@ class Auction {
         }
     }
 
-    // public function endDate(){
-    //     require __DIR__ . "/../dataBase.php";
-    //     $dateActuelle = date("Y-m-d");
-    // //recuperation date de fin
-    //     $endDateRecup = $dbh->prepare("SELECT end_date FROM `product`  WHERE id_product='" . $_GET['id'] . "'");
-    //     $endDateRecup->execute();
-    //     $endDate = $endDateRecup->fetchColumn();
+     public function endDate(){
+         require __DIR__ . "/../dataBase.php";
+         $dateActuelle = date("Y-m-d");
+     //recuperation date de fin
+         $endDateRecup = $dbh->prepare("SELECT end_date FROM `product`  WHERE id_product='" . $_GET['id'] . "'");
+         $endDateRecup->execute();
+         $endDate = $endDateRecup->fetchColumn();
     
-    //    //recuperation dernier encherisseur
-    //    $lastUserRecup = $dbh->prepare("SELECT id_user FROM `product`  WHERE id_product='" . $_GET['id'] . "'");
-    //    $lastUserRecup->execute();
-    //    $lastUser = $lastUserRecup->fetchColumn();
+        //recuperation dernier encherisseur
+        $lastUserRecup = $dbh->prepare("SELECT id_user FROM `product`  WHERE id_product='" . $_GET['id'] . "'");
+        $lastUserRecup->execute();
+        $lastUser = $lastUserRecup->fetchColumn();
         
+        var_dump($dateActuelle);
 
-    //     if ($endDate <= $dateActuelle ) {
+         if ($endDate <= $dateActuelle ) {
             
-    //         echo "<div class='alert alert-danger' role='alert'>
-    //                 L'enchère est terminée. Vous ne pouvez plus enchérir.<br/>
-    //                 Felicitations à $lastUser qui a remporté l'enchère !
-    //               </div>";
+             echo "<div class='alert alert-danger' role='alert'>
+                     L'enchère est terminée. Vous ne pouvez plus enchérir.<br/>
+                     Felicitations à $lastUser qui a remporté l'enchère !
+                   </div>";
                  
-    //         return;
-    //     }
-    // }
+             return;
+         }
+     }
 
 
     public function verification() {

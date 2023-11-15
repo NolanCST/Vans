@@ -93,200 +93,29 @@ if(isset($_POST['multisearch']))
     $query->execute();
     $results = $query->fetchAll();
 
-    echo "<div class='list a'>";
-  
-    foreach ($results as $result => $elements)
-    {
-      // affiche la demande lié au multisearch
-        echo "<div class='cardA'>
-        <div class='info'>";
+    // affiche la demande lié au multisearch
+    include "popup.php";
+    $myList = new Truc();
+    $myList -> card($results);
 
-        foreach($elements as $key =>$element){
-            if ($key == "title" /* || $key == "id_product" */ ||$key == "starting_price" ||$key == "last_price" ||$key == "end_date" ||$key == "model" ||$key == "mark" ||$key == "power" ||$key == "year" ||$key == "description" ||$key == "image") {
-                 
-                if($key == "last_price" || $key == "starting_price"){
-                    if($key == "last_price"){
-                        echo "<div class='cla-$key'> Dernier prix : ". $element . " €</div>" ;
-                    } else {
-                        echo "<div class='cla-$key'> Prix inicial : ". $element . " €</div>" ;
-                    }
-                } else if ($key == "power"){
-                    echo "<div class='cla-$key'> Puissance : ". $element . " ch</div>" ;
+    
+    }else if (@$afficher =="oui") {
 
-
-                } else if($key == 'image'){
-                    echo "<div class='cla-$key'>".'<img src="data:image/jpeg;base64,'.base64_encode($element).'"/></div>';
-                }  else {
-                    
-                    if ($key == 'title') {
-                        echo "<div class='cla-$key'> Titre : ". $element . " </div>" ;
-                    } else if ($key == 'mark') {
-                        echo "<div class='cla-$key'> Marque : ". $element . " </div>" ;
-                    } else if ($key == 'model') {
-                        echo "<div class='cla-$key'> Modèle : ". $element . " </div>" ;
-                    } else if ($key == 'power') {
-                        echo "<div class='cla-$key'> Puissance : ". $element . " </div>" ;
-                    } else if ($key == 'year') {
-                        echo "<div class='cla-$key'> Année : ". $element . " </div>" ;
-                    } else if ($key == 'description') {
-                        echo "<div class='cla-$key'> Description : ". $element . " </div>" ;
-                    }else if ($key == 'starting_price') {
-                        echo "<div class='cla-$key'> Prix de départ : ". $element . " </div>" ;
-                     } else if ($key == 'end_date'){
-                        echo "<div class='cla-$key'> Date de fin d'enchère : ". $element . " </div>" ;
-                    } else {
-                        echo "<div class='cla-$key'>". $key . " : ". $element . " </div>" ;
-                    }
-                }
-            }
-           }
-           ?>
-           </div>
-               <?php 
-               if(isset($_SESSION["email"])){ ?>
-                   <div class='lienAchat'>
-                       <a class="btnAuction" href='auction.php?id=<?php echo $elements['id_product'] ?>'>Encherir</a>
-                   </div>
-
-               <?php } else { ?>
-
-                   <div class='lienAchat'>
-                       <p class="infoEncherePopup">Pour pouvoir encherir, merci de vous connecter. <a href="login.php">Se connecter</a></p>
-                   </div>
-               <?php } ?>
-           </div>
-       <?php 
-           echo "</div> </div>";
-    }
-}else if (@$afficher =="oui") {
     // affiche la demande lié au search nav
-      echo "<div class='list b'>";
-      foreach ($tabs as $tab => $elements ) {
+    include "popup.php";
+    $myList = new Truc();
+    $myList -> card($tabs);
 
-          echo "<div class='cardA'>
-          <div class='info'>";
-
-          foreach($elements as $key =>$element){
-              if ($key == "title" /* || $key == "id_product" */ ||$key == "starting_price" ||$key == "last_price" ||$key == "end_date" ||$key == "model" ||$key == "mark" ||$key == "power" ||$key == "year" ||$key == "description" ||$key == "image") {
-
-                  if($key == "last_price" || $key == "starting_price"){
-                      if($key == "last_price"){
-                          echo "<div class='cla-$key'> Dernier prix : ". $element . " €</div>" ;
-                      } else {
-                          echo "<div class='cla-$key'> Prix inicial : ". $element . " €</div>" ;
-                      }
-
-                  } else if ($key == "power"){
-                      echo "<div class='cla-$key'> Puissance : ". $element . " ch</div>" ;
-                  } else if($key == 'image'){
-                      echo "<div class='cla-$key'>".'<img src="data:image/jpeg;base64,'.base64_encode($element).'"/></div>';
-                  }  else {               
-                      if ($key == 'title') {
-                          echo "<div class='cla-$key'> Titre : ". $element . " </div>" ;
-                      } else if ($key == 'mark') {
-                          echo "<div class='cla-$key'> Marque : ". $element . " </div>" ;
-                      } else if ($key == 'model') {
-                          echo "<div class='cla-$key'> Modèle : ". $element . " </div>" ;
-                      } else if ($key == 'power') {
-                          echo "<div class='cla-$key'> Puissance : ". $element . " </div>" ;
-                      } else if ($key == 'year') {
-                          echo "<div class='cla-$key'> Année : ". $element . " </div>" ;
-                      } else if ($key == 'description') {
-                          echo "<div class='cla-$key'> Description : ". $element . " </div>" ;
-                      }else if ($key == 'starting_price') {
-                          echo "<div class='cla-$key'> Prix de départ : ". $element . " </div>" ;
-                       } else if ($key == 'end_date'){
-                          echo "<div class='cla-$key'> Date de fin d'enchère : ". $element . " </div>" ;
-                      } else {
-                          echo "<div class='cla-$key'>". $key . " : ". $element . " </div>" ;
-                      }
-                  }
-              }       
-          }
-          ?>
-          </div>
-          <?php 
-              if(isset($_SESSION["email"])){ ?>
-                  <div class='lienAchat'>
-                      <a class="btnAuction" href='auction.php?id=<?php echo $elements['id_product'] ?>'>Encherir</a>
-                  </div>
-              <?php } else { ?>
-                  <div class='lienAchat'>
-                      <p class="infoEncherePopup">Pour pouvoir encherir, merci de vous connecter. <a href="login.php">Se connecter</a></p>
-                  </div>
-              <?php } ?>
-          </div>
-          <?php 
-          echo "</div> </div>";
-      }
   } else {
-      // requête et affichage générale de la database
+      
+    $query = $dbh->prepare("SELECT * FROM product");
+    $query->execute();
+    $results = $query->fetchAll();
 
-      $query = $dbh->prepare("SELECT * FROM product");
-      $query->execute();
-      $results = $query->fetchAll();
-
-      echo "<div class='list'>";
-
-      foreach ($results as $result => $elements) {
-          echo "<div class='cardA'>
-          <div class='info'>";
-
-          foreach($elements as $key =>$element){
-              if ($key == "title" /* || $key == "id_product" */ ||$key == "starting_price" ||$key == "last_price" ||$key == "end_date" ||$key == "model" ||$key == "mark" ||$key == "power" ||$key == "year" ||$key == "description" ||$key == "image") {
-
-                  if($key == "last_price" || $key == "starting_price"){
-                      if($key == "last_price"){
-                          echo "<div class='cla-$key'> Dernier prix : ". $element . " €</div>" ;
-                      } else {
-                          echo "<div class='cla-$key'> Prix inicial : ". $element . " €</div>" ;
-                      }
-
-                  } else if ($key == "power"){
-                      echo "<div class='cla-$key'> Puissance : ". $element . " ch</div>" ;
-
-
-                  } else if($key == 'image'){
-                      echo "<div class='cla-$key'>".'<img src="data:image/jpeg;base64,'.base64_encode($element).'"/></div>';
-                  }  else {
-
-                      if ($key == 'title') {
-                          echo "<div class='cla-$key'> Titre : ". $element . " </div>" ;
-                      } else if ($key == 'mark') {
-                          echo "<div class='cla-$key'> Marque : ". $element . " </div>" ;
-                      } else if ($key == 'model') {
-                          echo "<div class='cla-$key'> Modèle : ". $element . " </div>" ;
-                      } else if ($key == 'power') {
-                          echo "<div class='cla-$key'> Puissance : ". $element . " </div>" ;
-                      } else if ($key == 'year') {
-                          echo "<div class='cla-$key'> Année : ". $element . " </div>" ;
-                      } else if ($key == 'description') {
-                          echo "<div class='cla-$key'> Description : ". $element . " </div>" ;
-                      }else if ($key == 'starting_price') {
-                          echo "<div class='cla-$key'> Prix de départ : ". $element . " </div>" ;
-                       } else if ($key == 'end_date'){
-                          echo "<div class='cla-$key'> Date de fin d'enchère : ". $element . " </div>" ;
-                      } else {
-                          echo "<div class='cla-$key'>". $key . " : ". $element . " </div>" ;
-                      }
-                  }
-              }
-          } ?>
-          </div>
-          <?php 
-          if(isset($_SESSION["email"])){ ?>
-              <div class='lienAchat'>
-                  <a class="btnAuction" href='auction.php?id=<?php echo $elements['id_product'] ?>'>Encherir</a>
-              </div>
-          <?php } else { ?>
-                <div class='lienAchat'>
-                    <p class="infoEncherePopup">Pour pouvoir encherir, merci de vous connecter. <a href="login.php">Se connecter</a></p>
-                </div>
-            <?php } ?>
-      </div>
-      <?php }
-      echo"</div>";
-
+    // requête et affichage générale de la database
+    include "popup.php";
+    $myList = new Truc();
+    $myList -> card($results);
 }
 
 
