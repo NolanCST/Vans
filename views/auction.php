@@ -78,6 +78,7 @@ class Auction {
             ?>
             <div class="alert alert-danger" role="alert">
                 Vous devez miser un montant superieur à la mise précédente.
+                Vous devez miser un montant superieur à la mise précédente.
             </div>
             <?php
             return;

@@ -119,22 +119,22 @@
                     <div class="article2">
                         <h4>À propos du site</h4>
                         <a href="sous_dossier_footer/qui_sommes_nous.php">Qui sommes-nous ?</a>
-                        <a href="https://www.youtube.com/watch?v=CiaTQ-08vSU">Contactez-nous</a>
-                        <a href="https://www.youtube.com/watch?v=mF3NWS_m_FY">Mentions légales</a>
-                        <a href="https://www.youtube.com/watch?v=P3AvEvESaAA">Politique de Confidentialité</a>
+                        <a href="sous_dossier_footer/contact.php">Contactez-nous</a>
+                        <a href="">Mentions légales</a>
+                        <a href="">Politique de Confidentialité</a>
                     </div>
 
                     <div class="article3">
                         <h4>Informations enchères</h4>
-                        <a href="https://www.youtube.com/watch?v=VBKGmmd7aDM">Comment cela marche</a>
-                        <a href="https://www.youtube.com/watch?v=4RROUa_S0S8">Questions fréquentes</a>
+                        <a href="">Comment cela marche</a>
+                        <a href="">Questions fréquentes</a>
                     </div>
 
                     <div class="article4">
                         <h4>Liens rapides</h4>
-                        <a href="https://www.youtube.com/watch?v=f_nByTX1cgA">Informations enchères</a>
-                        <a href="https://www.youtube.com/watch?v=nUuFKtl9ajk">Historique des enchères</a>
-                        <a href="https://www.youtube.com/watch?v=Ygnez_odlNg">Nos enchères</a>
+                        <a href="">Informations enchères</a>
+                        <a href="">Historique des enchères</a>
+                        <a href="">Nos enchères</a>
                     </div>
                 </div>
             </footer>
