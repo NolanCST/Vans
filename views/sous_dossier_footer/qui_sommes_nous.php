@@ -29,7 +29,7 @@
 
                 <div class="col-md-8">
                     <div class="card-body">
-                        <h5 class="card-title dev">andrea</h5>
+                        <h5 class="card-title dev">Andrea</h5>
                         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                         <!-- <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p> -->
                     </div>
@@ -44,7 +44,7 @@
 
                 <div class="col-md-8">
                     <div class="card-body">
-                        <h5 class="card-title dev">nolan</h5>
+                        <h5 class="card-title dev">Nolan</h5>
                         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>   
                         <!-- <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p> -->
                     </div>
@@ -59,7 +59,7 @@
 
                 <div class="col-md-8">
                     <div class="card-body">
-                        <h5 class="card-title dev">veronique</h5>
+                        <h5 class="card-title dev">Veronique</h5>
                         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                         <!-- <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p> -->
                     </div>
@@ -68,13 +68,13 @@
         </div>
         <div class="card mb-3 sergio" >
             <div class="row g-0">
-                <div class="col-md-4">
-                    <img src="../../images/d.gif" class="img-fluid rounded-start" alt="...">
+                <div class="col-md-4 sergius">
+                    <img src="../../images/s.png" class="img-fluid rounded-start" alt="...">
                 </div>
 
                 <div class="col-md-8">
                     <div class="card-body">
-                        <h5 class="card-title dev">sergio</h5>
+                        <h5 class="card-title dev">Sergio</h5>
                         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                         <!-- <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p> -->
                     </div>

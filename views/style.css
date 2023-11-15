@@ -6,24 +6,25 @@
 
 body {
    background-image: url(https://www.papierpeintpanoramique.fr/media/catalog/product/cache/871f459736130e239a3f5e6472128962/w/1/w12252-small.jpg);
-   width: 100vw;
+   /* width: 100vw; */
+   min-height: 100vh;
    display: flex;
    flex-direction: column;
    align-items: center;
-   justify-content: center;
+   justify-content: space-between;
 }
-body.active {
+
+body .active {
    height: 100vh;
    overflow: hidden;
 }
 
-main {
-   position: relative;
-   width: 100vw;
+/* main {
+   min-width: 100vw;
    height: 100vh;
    padding-top: 70px;
    overflow: auto;
-}
+} */
 
 h1,
 h2,
@@ -34,14 +35,11 @@ p {
 /* Vitrine*/
 .hero {
    height: 50vh;
-   width: 100vw;
+   width: 100%;
    background-image: url("../images/sortie-de-grange-vente-encheres-collection-barning-palmen-1_4.jpg");
    background-repeat: no-repeat;
    background-position: bottom;
    background-size: cover;
-   position: relative;
-   left: 0;
-   right: 0;
 }
 
 .p_ftLogo2 {
@@ -62,12 +60,12 @@ p {
    font-size: 30px !important;
 }
 
-section {
+/* section {
    width: 100%;
    height: 100%;
    display: flex;
    flex-direction: row;
-}
+} */
 
 .itemNavBar {
    width: 60vw;
@@ -88,18 +86,17 @@ section {
 /* -----------------------> Page Index <-------------------------- */
 /* -------> list card <------- */
 .list {
-   width: 100%;
-   height: 100%;
    display: flex;
    flex-wrap: wrap;
    justify-content: space-evenly;
    padding: 0px 12px;
-   overflow-y: auto;
+   margin-bottom: 2%;
    gap: 30px;
 }
+
 .cardA {
    margin: 20px 0;
-   height: 50%;
+   min-height: 40vh;
    width: 314px;
    background-color: #ecf8f6;
    display: flex;
@@ -109,10 +106,10 @@ section {
 }
 .cardA.active {
    position: absolute;
-   height: 900px;
-   width: 98%;
+   height: 90%;
+   width: 90%;
    z-index: 4;
-   top: 6%;
+   top: 7%;
    border-radius: 20px;
 }
 .cardA.active .cla-image {
@@ -158,9 +155,11 @@ section {
    grid-area: image;
    background-color: #134e5e;
 }
-body.active main {
+
+/* body.active main {
    position: static;
-}
+} */
+
 .cardA.active .image {
    height: 400px;
 }
@@ -259,8 +258,9 @@ body.active main {
 
 /* ----> Section Footer <---- */
 footer {
-   width: 100vw;
-   height: 180px;
+   min-width: 100%;
+   /* height: 180px; */
+   /* bottom: 0; */
 }
 .aide {
    display: flex;

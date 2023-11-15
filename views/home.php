@@ -5,8 +5,8 @@ session_start(); ?>
     <section class="hero d-flex flex-column align-items-center justify-content-center mx-0">
           <div class="text-center">
             <p class="p_ftLogo2">Vans</p>
-            <h2 class="display-3 text-white">Le meilleur site d'enchère pas OUF</h2>
-            <h5 class="text-secondary text-white">Avec un brin de php et une base mysql</h5>
+            <h2 class="display-3 text-white">Les plus belles voitures vintages du monde</h2>
+            <h5 class="text-secondary text-white">La qualité à l'ancienne</h5>
           </div>
         </div>
     </section>

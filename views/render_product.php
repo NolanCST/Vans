@@ -17,6 +17,7 @@ session_start(); ?>
 ?>
 
 <!-- Formulaire input pour la recherche rapide -->
+
 <div class="filter-main">
     <form class="form-filter" name="fo" method="post" action="">
         <div class="filter-title">
@@ -92,7 +93,7 @@ if(isset($_POST['multisearch']))
     $query->execute();
     $results = $query->fetchAll();
 
-    echo "<div class='containerCardB'>";
+    echo "<div class='list a'>";
   
     foreach ($results as $result => $elements)
     {
@@ -109,7 +110,6 @@ if(isset($_POST['multisearch']))
                     } else {
                         echo "<div class='cla-$key'> Prix inicial : ". $element . " €</div>" ;
                     }
-                    
                 } else if ($key == "power"){
                     echo "<div class='cla-$key'> Puissance : ". $element . " ch</div>" ;
 
@@ -138,14 +138,29 @@ if(isset($_POST['multisearch']))
                         echo "<div class='cla-$key'>". $key . " : ". $element . " </div>" ;
                     }
                 }
-             }
+            }
            }
-           echo "</div> </div>";
-      }
-  }else if (@$afficher =="oui") {
-    // affiche la demande lié au search nav
-      echo "<div class='containerCardB'>";
+           ?>
+           </div>
+               <?php 
+               if(isset($_SESSION["email"])){ ?>
+                   <div class='lienAchat'>
+                       <a class="btnAuction" href='auction.php?id=<?php echo $elements['id_product'] ?>'>Encherir</a>
+                   </div>
 
+               <?php } else { ?>
+
+                   <div class='lienAchat'>
+                       <p class="infoEncherePopup">Pour pouvoir encherir, merci de vous connecter. <a href="login.php">Se connecter</a></p>
+                   </div>
+               <?php } ?>
+           </div>
+       <?php 
+           echo "</div> </div>";
+    }
+}else if (@$afficher =="oui") {
+    // affiche la demande lié au search nav
+      echo "<div class='list b'>";
       foreach ($tabs as $tab => $elements ) {
 
           echo "<div class='cardA'>
@@ -188,6 +203,20 @@ if(isset($_POST['multisearch']))
                   }
               }       
           }
+          ?>
+          </div>
+          <?php 
+              if(isset($_SESSION["email"])){ ?>
+                  <div class='lienAchat'>
+                      <a class="btnAuction" href='auction.php?id=<?php echo $elements['id_product'] ?>'>Encherir</a>
+                  </div>
+              <?php } else { ?>
+                  <div class='lienAchat'>
+                      <p class="infoEncherePopup">Pour pouvoir encherir, merci de vous connecter. <a href="login.php">Se connecter</a></p>
+                  </div>
+              <?php } ?>
+          </div>
+          <?php 
           echo "</div> </div>";
       }
   } else {
