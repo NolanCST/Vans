@@ -58,11 +58,12 @@ session_start(); ?>
         <div>
             <input class="btn btn-warning" type="submit" name="multisearch" value="Rechercher" />
         </div>
-        <div>
-        <button class="btn btn-outline-warning" id="refresh" onclick="windows.location.reload(false)"> Rafraichir </button>
-        </div>
     </div>        
-</form>
+    </form>
+    <a href="render_product.php">
+        <button class="btn btn-outline-warning" id="refresh"> Rafraichir </button>
+    </a>
+
 
 <?php
 
