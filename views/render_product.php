@@ -27,7 +27,7 @@ session_start(); ?>
             <div class="input-group mb-3 input-multi-search">
                 <label class="input-group-text" for="inputGroupSelect01">Marque</label>
                 <select class="form-select" id="inputGroupSelect01" name="marque">
-                    <option selected>... Choisir votre marque ...</option>
+                    <option selected>-- Choisir votre marque --</option>
                         <?php 
                             $res=$dbh->prepare("SELECT DISTINCT mark FROM product");
                             $res->setFetchMode(PDO::FETCH_ASSOC);

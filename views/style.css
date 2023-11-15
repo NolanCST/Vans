@@ -106,10 +106,10 @@ p {
 }
 .cardA.active {
    position: absolute;
-   height: 90%;
-   width: 90%;
+   height: 80%;
+   width: 80%;
    z-index: 4;
-   top: 7%;
+   top: 13%;
    border-radius: 20px;
 }
 .cardA.active .cla-image {
