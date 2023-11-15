@@ -20,6 +20,36 @@ class Auction {
             return $this->$property;
         }
     }
+
+
+    // public function endDate(){
+    //     require __DIR__ . "/../dataBase.php";
+    //     $dateActuelle = date("Y-m-d");
+    // //recuperation date de fin
+    //     $endDateRecup = $dbh->prepare("SELECT end_date FROM `product`  WHERE id_product='" . $_GET['id'] . "'");
+    //     $endDateRecup->execute();
+    //     $endDate = $endDateRecup->fetchColumn();
+    
+    //    //recuperation dernier encherisseur
+    //    $lastUserRecup = $dbh->prepare("SELECT id_user FROM `product`  WHERE id_product='" . $_GET['id'] . "'");
+    //    $lastUserRecup->execute();
+    //    $lastUser = $lastUserRecup->fetchColumn();
+        
+
+    //     if ($endDate <= $dateActuelle ) {
+            
+    //         echo "<div class='alert alert-danger' role='alert'>
+    //                 L'enchère est terminée. Vous ne pouvez plus enchérir.<br/>
+    //                 Felicitations à $lastUser qui a remporté l'enchère !
+    //               </div>";
+                 
+    //         return;
+    //     }
+    // }
+
+
+
+
     public function verification() {
         require __DIR__ . "/../dataBase.php";
        //recuperation du prix de base
