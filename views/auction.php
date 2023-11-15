@@ -48,12 +48,6 @@ class Auction {
         }
     }
 
-
-    
-
-
-
-
     public function verification() {
         require __DIR__ . "/../dataBase.php";
        //recuperation du prix de base
@@ -77,7 +71,6 @@ class Auction {
         if ($lastPrice !== false && $this->amount <= $lastPrice) {
             ?>
             <div class="alert alert-danger" role="alert">
-                Vous devez miser un montant superieur à la mise précédente.
                 Vous devez miser un montant superieur à la mise précédente.
             </div>
             <?php
