@@ -22,30 +22,34 @@ class Auction {
     }
 
 
-    // public function endDate(){
-    //     require __DIR__ . "/../dataBase.php";
-    //     $dateActuelle = date("Y-m-d");
-    // //recuperation date de fin
-    //     $endDateRecup = $dbh->prepare("SELECT end_date FROM `product`  WHERE id_product='" . $_GET['id'] . "'");
-    //     $endDateRecup->execute();
-    //     $endDate = $endDateRecup->fetchColumn();
+    public function endDateF(){
+        require __DIR__ . "/../dataBase.php";
+        $dateActuelle = date("Y-m-d");
+    //recuperation date de fin
+        $endDateRecup = $dbh->prepare("SELECT end_date FROM `product`  WHERE id_product='" . $_GET['id'] . "'");
+        $endDateRecup->execute();
+        $endDate = $endDateRecup->fetchColumn();
     
-    //    //recuperation dernier encherisseur
-    //    $lastUserRecup = $dbh->prepare("SELECT id_user FROM `product`  WHERE id_product='" . $_GET['id'] . "'");
-    //    $lastUserRecup->execute();
-    //    $lastUser = $lastUserRecup->fetchColumn();
+       //recuperation dernier encherisseur
+       $lastUserRecup = $dbh->prepare("SELECT id_user FROM `auction`  WHERE id_product='" . $_GET['id'] . "'");
+       $lastUserRecup->execute();
+       $lastUser = $lastUserRecup->fetchColumn();
         
 
-    //     if ($endDate <= $dateActuelle ) {
+        if ($endDate <= $dateActuelle ) {
             
-    //         echo "<div class='alert alert-danger' role='alert'>
-    //                 L'enchère est terminée. Vous ne pouvez plus enchérir.<br/>
-    //                 Felicitations à $lastUser qui a remporté l'enchère !
-    //               </div>";
-                 
-    //         return;
-    //     }
-    // }
+            echo "<div class='alert alert-danger' role='alert'>
+                    L'enchère est terminée. Vous ne pouvez plus enchérir.<br/>
+                    Felicitations à $lastUser qui a remporté l'enchère !
+                  </div>";
+         
+        } else {
+        $this->save();
+        }
+    }
+
+
+    
 
 
 
@@ -73,23 +77,25 @@ class Auction {
         if ($lastPrice !== false && $this->amount <= $lastPrice) {
             ?>
             <div class="alert alert-danger" role="alert">
-                Vous devez miser un amount superieur à la mise précédente.
+                Vous devez miser un montant superieur à la mise précédente.
             </div>
             <?php
             return;
         }
 
-
-        $query = $dbh->prepare("UPDATE `product` SET last_price=:last_Price WHERE id_product='" . $_GET['id'] . "'");
-        $query->bindValue(':last_Price', $this->amount, PDO::PARAM_STR);
-        $results = $query->execute();
-        $this->save();
+        $this->endDateF();
     }
 
 
     public function save () {
         $id = $_SESSION['id'];
         require __DIR__."/../dataBase.php";
+
+        //Mise a jour du dernier prix de l'enchere
+        $majLastPrice = $dbh->prepare("UPDATE `product` SET last_price=:last_Price WHERE id_product='" . $_GET['id'] . "'");
+        $majLastPrice->bindValue(':last_Price', $this->amount, PDO::PARAM_STR);
+        $results = $majLastPrice->execute();
+
         //recuperation des donnees de l'utilisateurs
         $dbuser = $dbh->prepare("SELECT id_user, firstname FROM `user` WHERE id_user=$id");
         $dbuser->execute();
@@ -160,7 +166,7 @@ echo "<div class=\"enchereContainer\">";
     <form class='formAuction' action='' method='post'>
         <div class="form-floating">
             <input type="number" class="form-control transparent-input auctionInput" name="amount" placeholder="amount de l'enchere"  required>
-            <label>amount de l'enchère</label>
+            <label>Montant de l'enchère</label>
         </div>
         <input type="submit" value="Encherir" name="submit" class="btn btnAuction btn-warning">
     </form>
