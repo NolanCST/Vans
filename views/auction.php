@@ -20,6 +20,36 @@ class Auction {
             return $this->$property;
         }
     }
+
+
+    public function endDate(){
+        require __DIR__ . "/../dataBase.php";
+        $dateActuelle = date("Y-m-d");
+    //recuperation date de fin
+        $endDateRecup = $dbh->prepare("SELECT end_date FROM `product`  WHERE id_product='" . $_GET['id'] . "'");
+        $endDateRecup->execute();
+        $endDate = $endDateRecup->fetchColumn();
+    
+       //recuperation dernier encherisseur
+       $lastUserRecup = $dbh->prepare("SELECT id_user FROM `product`  WHERE id_product='" . $_GET['id'] . "'");
+       $lastUserRecup->execute();
+       $lastUser = $lastUserRecup->fetchColumn();
+        
+
+        if ($endDate <= $dateActuelle ) {
+            
+            echo "<div class='alert alert-danger' role='alert'>
+                    L'enchère est terminée. Vous ne pouvez plus enchérir.<br/>
+                    Felicitations à $lastUser qui a remporté l'enchère !
+                  </div>";
+                 
+            return;
+        }
+    }
+
+
+
+
     public function verification() {
         require __DIR__ . "/../dataBase.php";
        //recuperation du prix de base
@@ -43,7 +73,7 @@ class Auction {
         if ($lastPrice !== false && $this->amount <= $lastPrice) {
             ?>
             <div class="alert alert-danger" role="alert">
-                Vous devez miser un amount superieur à la mise précédente.
+                Vous devez miser un montant superieur à la mise précédente.
             </div>
             <?php
             return;
@@ -130,7 +160,7 @@ echo "<div class=\"enchereContainer\">";
     <form class='formAuction' action='' method='post'>
         <div class="form-floating">
             <input type="number" class="form-control transparent-input auctionInput" name="amount" placeholder="amount de l'enchere"  required>
-            <label>amount de l'enchère</label>
+            <label>Montant de l'enchère</label>
         </div>
         <input type="submit" value="Encherir" name="submit" class="btn btnAuction btn-warning">
     </form>
