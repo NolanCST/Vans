@@ -1,16 +1,9 @@
+/* -----------------------> Page Annonces : Formulaire <-------------------------- */
 /* ----> Formulaire multisearch <---- */
-
 .filter-main {
    display: flex;
    flex-direction: row;
    background-color: rgba(0, 0, 0, 0.5);
-}
-
-.button-refresh {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   padding-top: 6%;
 }
 
 .form-filter {
@@ -38,6 +31,13 @@
    font-size: 16px;
    border: none;
    outline: none;
+}
+
+.button-refresh {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding-top: 6%;
 }
 
 /* ----> affichage recherche générale <---- */
