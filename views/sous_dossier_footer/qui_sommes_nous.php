@@ -12,9 +12,9 @@
     <header class="header">
         <h1>qui sommes nous ?</h1>
         <div class="presentation">
-            <h2>Nous sommes des spartiate</h2>
-            <p>Non je plaisante ;) nous sommes un groupe de personnes en reconvertion professionnelle afin de devenir des développeur web full stack </p>
-            <p>Ce site à été conçu par 4 personnes que voici :</p>
+            <h2>Nous sommes des spartiates</h2>
+            <p>Non je plaisante ;) nous sommes un groupe de personnes en reconversion professionnelle afin de devenir des développeurs web full stack </p>
+            <p>Ce site a été conçu par 4 personnes que voici :</p>
         </div>
 
     </header>
