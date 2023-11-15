@@ -104,6 +104,7 @@ section {
    overflow: hidden;
 }
 .cardA.active {
+   position: absolute;
    height: 900px;
    width: 98%;
    z-index: 4;
